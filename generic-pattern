@@ -1,0 +1,229 @@
+{
+    "version": "kubepattern.sigemi.it/v2",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "pattern-name",
+        "patternType": "Structural",
+        "severity": "severity# Critical, Warning, Info, Debug",
+        "category": "category",
+        "docUrl": "https://docs.sigemi.it/patterns/sidecar",
+        "gitUrl": "https://github.com/SIGEMI/patterns/sidecar",
+        "patternURI": "patternURI"
+    },
+    "spec": {
+        "description": "Questa regola identifica una configurazione del cluster che suggerisce l'applicazione del pattern Sidecar, applicare il pattern potrebbe portare ad una maggiore modularità, osservabilità e gestione dei servizi.\n",
+        "leader": "main-app",
+        "message": "Message to be displayed when the pattern is matched, can use {{resource.kind}}, {{resource.metadata.name}}, {{resource.metadata.namespace}} to reference the resource that matched the pattern",
+        "globalFilters": {
+            "matchAll": [
+                {
+                    "key": "jsonpath",
+                    "operator": "Operator",
+                    "mode": "Mode",
+                    "values": [
+                        "str1",
+                        "str2"
+                    ]
+                }
+            ],
+            "matchNone": null,
+            "matchAny": null
+        },
+        "resources": [
+            {
+                "resource": "ResourceKind",
+                "id": "identifier",
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": "jsonpath",
+                            "operator": "Operator",
+                            "mode": "Mode",
+                            "values": [
+                                "str1",
+                                "str2"
+                            ]
+                        }
+                    ],
+                    "matchNone": null,
+                    "matchAny": null
+                }
+            }
+        ],
+        "relationships": [
+            {
+                "type": "SharedNamespace",
+                "description": "Resources must be in the same namespace",
+                "resourceIds": [
+                    "main-app",
+                    "potential-sidecar"
+                ],
+                "required": true,
+                "conditions": [
+                    {
+                        "key": "metadata.namespace",
+                        "operator": "Equals",
+                        "shared": true
+                    }
+                ]
+            },
+            {
+                "type": "SameNode",
+                "description": "Resources should be scheduled on the same node for low-latency communication",
+                "resourceIds": [
+                    "main-app",
+                    "potential-sidecar"
+                ],
+                "required": false,
+                "conditions": [
+                    {
+                        "key": "spec.nodeName",
+                        "operator": "Equals",
+                        "shared": true,
+                        "values": [
+                            "node-1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "SameAttributes",
+                "description": "Resources should share specific attributes for consistency",
+                "resourceIds": [
+                    "main-app",
+                    "potential-sidecar"
+                ],
+                "required": false,
+                "conditions": [
+                    {
+                        "key": "spec.tolerations[*].key",
+                        "operator": "In",
+                        "mode": "Any",
+                        "shared": true,
+                        "values": [
+                            "key1",
+                            "key2"
+                        ]
+                    },
+                    {
+                        "key": "spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms[*].matchExpressions[*].key",
+                        "operator": "In",
+                        "mode": "Any",
+                        "shared": true,
+                        "values": [
+                            "key1",
+                            "key2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "ParentChild",
+                "description": "Resources must belong to the same parent resource",
+                "resourceIds": [
+                    "main-app",
+                    "potential-sidecar"
+                ],
+                "required": true,
+                "conditions": [
+                    {
+                        "key": "metadata.ownerReferences[*].uid",
+                        "operator": "Equals",
+                        "shared": true
+                    },
+                    {
+                        "key": "metadata.ownerReferences[*].kind",
+                        "operator": "Equals",
+                        "shared": true,
+                        "values": [
+                            "Deployment"
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "SameParentDifferentContainers",
+                "description": "Resources should be different containers in the same pod template",
+                "resourceIds": [
+                    "main-app",
+                    "potential-sidecar"
+                ],
+                "required": false,
+                "conditions": [
+                    {
+                        "key": "metadata.ownerReferences[*].uid",
+                        "operator": "Equals",
+                        "shared": true
+                    },
+                    {
+                        "key": "spec.template.spec.containers[*].name",
+                        "operator": "NotEquals",
+                        "shared": false
+                    }
+                ]
+            },
+            {
+                "type": "SharedLabels",
+                "description": "Resources should share common application labels",
+                "resourceIds": [
+                    "main-app",
+                    "potential-sidecar"
+                ],
+                "required": false,
+                "conditions": [
+                    {
+                        "key": "metadata.labels['app']",
+                        "operator": "Equals",
+                        "shared": true
+                    },
+                    {
+                        "key": "metadata.labels['version']",
+                        "operator": "Equals",
+                        "shared": true
+                    }
+                ]
+            },
+            {
+                "type": "SharedVolume",
+                "description": "Resources should share volumes for data exchange",
+                "resourceIds": [
+                    "main-app",
+                    "potential-sidecar"
+                ],
+                "required": false,
+                "conditions": [
+                    {
+                        "key": "spec.volumes[*].name",
+                        "operator": "Contains",
+                        "mode": "Any",
+                        "shared": true,
+                        "values": [
+                            "shared-data",
+                            "logs",
+                            "config"
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "NetworkProximity",
+                "description": "Resources should be network-accessible to each other",
+                "resourceIds": [
+                    "main-app",
+                    "potential-sidecar"
+                ],
+                "required": true,
+                "conditions": [
+                    {
+                        "key": "spec.hostNetwork",
+                        "operator": "Equals",
+                        "shared": true,
+                        "values": [
+                            "true"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
