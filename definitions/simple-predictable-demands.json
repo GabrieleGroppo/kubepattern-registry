@@ -1,0 +1,52 @@
+{
+    "version": "kubepattern.sigemi.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "simple-predictable-demands",
+        "displayName": "Simple Predictable Demands",
+        "patternType": "Foundational",
+        "severity": "Warning",
+        "category": "category",
+        "docUrl": "https://github.com/GabrieleGroppo/patterns/doc/simple-pattern.md",
+        "gitUrl": "https://github.com/GabrieleGroppo/patterns/simple-pattern.json",
+        "patternURI": "patternURI"
+    },
+    "spec": {
+        "description": "Questo pattern verifica ogni pod abbia i limiti di risorse CPU e memoria impostati.",
+        "leader": "single-pod",
+        "message": "Il pod {{single-pod.name}} nel namespace {{single-pod.namespace}} non ha i limiti di risorse CPU e memoria impostati.",
+        "resources": [
+            {
+                "resource": "Pod",
+                "id": "single-pod",
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".spec.containers[*].resources.limits.cpu",
+                            "operator": "IsEmpty",
+                            "values": []
+                        },
+                        {
+                            "key": ".spec.containers[*].resources.limits.memory",
+                            "operator": "IsEmpty",
+                            "values": []
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "In",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease"
+                            ]
+                        }
+                    ],
+                    "matchAny": null
+                }
+            }
+        ],
+        "relationships": []
+    }
+}
