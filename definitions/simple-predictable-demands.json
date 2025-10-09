@@ -23,12 +23,12 @@
                     "matchAll": [
                         {
                             "key": ".spec.containers[*].resources.limits.cpu",
-                            "operator": "NOT_EXISTS",
+                            "operator": "IS_EMPTY",
                             "values": []
                         },
                         {
                             "key": ".spec.containers[*].resources.limits.memory",
-                            "operator": "NOT_EXISTS",
+                            "operator": "IS_EMPTY",
                             "values": []
                         }
                     ],
