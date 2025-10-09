@@ -7,8 +7,8 @@
         "patternType": "Foundational",
         "severity": "Warning",
         "category": "category",
-        "docUrl": "https://github.com/GabrieleGroppo/patterns/doc/simple-pattern.md",
-        "gitUrl": "https://github.com/GabrieleGroppo/patterns/simple-pattern.json",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/definitions",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc",
         "patternURI": "patternURI"
     },
     "spec": {
