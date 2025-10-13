@@ -65,7 +65,7 @@
                 "resourceIds": [
                     "main-app",
                     "sidecar"
-                ],
+                ]
 
             },
             {
@@ -78,7 +78,7 @@
                 "resourceIds": [
                     "main-app",
                     "sidecar"
-                ],
+                ]
             }
         ]
     }
