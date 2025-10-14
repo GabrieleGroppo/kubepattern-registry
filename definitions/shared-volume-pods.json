@@ -12,8 +12,8 @@
         "patternURI": "patternURI"
     },
     "spec": {
-        "description": "Identifica i pod che potrebbero implementare un pattern sidecar.",
-        "message": "Il pod {{main-app.name}} nel namespace {{main-app.namespace}} potrebbe implementare un pattern sidecar con {{sidecar.name}} nel namespace {{sidecar.namespace}}. Considera di spostare il sidecar nello stesso pod del main app per migliorare la gestione e le prestazioni.",
+        "description": "Identifies pods that might implement a sidecar pattern.",
+        "message": "Pod {{main-app.name}} in namespace {{main-app.namespace}} might implement a sidecar pattern with {{sidecar.name}} in namespace {{sidecar.namespace}}. Consider moving the sidecar into the same pod as the main app to improve management and performance.",
         "resources": [
             {
                 "resource": "Pod",
@@ -56,9 +56,9 @@
         ],
         "relationships": [
             {
-                "id": "main-app-sidecar-network-proximity",
+                "id": "main-app-sidecar-shared-volume",
                 "type": "MOUNTS",
-                "description": "Resources should be network-accessible to each other",
+                "description": "Il pod main-app e il pod sidecar montano lo stesso volume.",
                 "weight": 0.5,
                 "required": true,
                 "shared": false,
