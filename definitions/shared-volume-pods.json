@@ -2,18 +2,18 @@
     "version": "kubepattern.sigemi.it/v1",
     "kind": "Pattern",
     "metadata": {
-        "name": "shared-volume-pod",
-        "displayName": "Shared Volume Pod",
-        "patternType": "Custom",
-        "severity": "Warning",
-        "category": "test",
+        "name": "sidecar-test",
+        "displayName": "Sidecar Test",
+        "patternType": "Structural",
+        "severity": "Info",
+        "category": "logging",
         "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/definitions",
         "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc",
         "patternURI": "patternURI"
     },
     "spec": {
-        "description": "Identifica pattern sidecar dove un pod principale condivide volumi con un container di supporto per logging o monitoring",
-        "message": "Il pod {{main-app.name}} nel namespace {{main-app.namespace}} potrebbe implementare un pattern sidecar con {{sidecar.name}}",
+        "description": "Identifica i pod che potrebbero implementare un pattern sidecar.",
+        "message": "Il pod {{main-app.name}} nel namespace {{main-app.namespace}} potrebbe implementare un pattern sidecar con {{sidecar.name}} nel namespace {{sidecar.namespace}}. Considera di spostare il sidecar nello stesso pod del main app per migliorare la gestione e le prestazioni.",
         "resources": [
             {
                 "resource": "Pod",
@@ -57,24 +57,11 @@
         "relationships": [
             {
                 "id": "main-app-sidecar-network-proximity",
-                "type": "NetworkProximity",
+                "type": "MOUNTS",
                 "description": "Resources should be network-accessible to each other",
                 "weight": 0.5,
                 "required": true,
                 "shared": false,
-                "resourceIds": [
-                    "main-app",
-                    "sidecar"
-                ]
-
-            },
-            {
-                "id": "main-app-sidecar-shared-volume",
-                "type": "SharedVolume",
-                "weight": 1.0,
-                "description": "Resources should share volumes for data exchange",
-                "required": false,
-                "shared": true,
                 "resourceIds": [
                     "main-app",
                     "sidecar"
