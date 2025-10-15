@@ -14,6 +14,8 @@
     "spec": {
         "description": "Identifies pods that might implement a sidecar pattern.",
         "message": "Pod {{main-app.name}} in namespace {{main-app.namespace}} might implement a sidecar pattern with {{sidecar.name}} in namespace {{sidecar.namespace}}. Consider moving the sidecar into the same pod as the main app to improve management and performance.",
+        "topology": "LEADER_FOLLOWER",
+        "leader": "main-app",
         "resources": [
             {
                 "resource": "Pod",
