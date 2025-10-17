@@ -51,7 +51,8 @@
                 "id": "sidecar",
                 "filters": {
                     "matchAll": [],
-                    "matchNone": [
+                    "matchNone": [],
+                    "matchAny": [
                         {
                             "key": ".metadata.name",
                             "operator": "EQUALS",
@@ -61,8 +62,7 @@
                                 "log"
                             ]
                         }
-                    ],
-                    "matchAny": []
+                    ]
                 }
             }
         ],
