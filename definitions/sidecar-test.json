@@ -33,7 +33,17 @@
                             ]
                         }
                     ],
-                    "matchAny": []
+                    "matchAny": [
+                        {
+                            "key": ".metadata.name",
+                            "operator": "EQUALS",
+                            "values": [
+                                "application",
+                                "frontend",
+                                "backend"
+                            ]
+                        }
+                    ]
                 }
             },
             {
@@ -43,12 +53,12 @@
                     "matchAll": [],
                     "matchNone": [
                         {
-                            "key": ".metadata.namespace",
+                            "key": ".metadata.name",
                             "operator": "EQUALS",
                             "values": [
-                                "kube-system",
-                                "kube-public",
-                                "kube-node-lease"
+                                "logging",
+                                "logger",
+                                "log"
                             ]
                         }
                     ],
