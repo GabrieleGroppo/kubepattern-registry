@@ -1,0 +1,26 @@
+apiVersion: sigemi.it/v1
+kind: K8sPattern
+metadata:
+  name: sidecar-pattern-0i9j-8k7l6m5n4o3p
+  namespace: pattern-analysis-ns
+spec:
+  apiVersion: v1
+  type: Structural
+  name: Sidecar
+  description: "A sidecar is a container that runs alongside the main application container in a pod, often handling cross-cutting concerns like logging or monitoring."
+  referenceLink: "https://github.com/GabrieleGroppo/patterns/sidecar.json"
+  message: "Consider moving flutent pod containers into main-app pod to enhance your application's functionality and maintainability."
+  severity: Info
+  category: Reliability
+  scores:
+    filters: 98
+    commonRelationships: 80
+  totalScore: 89
+  resources:
+    - name: main-app
+      namespace: development
+      uid: 9a7b6c5d-4e3f-2g1h-0i9j-8k7l6m5n4o3p
+    - name: flutent
+      namespace: development
+      uid: 1b2c3d4e-5f6g-7h8i-9j0k-1l2m3n4o5p6q
+      

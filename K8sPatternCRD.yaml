@@ -1,0 +1,92 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: k8spatterns.sigemi.it
+spec:
+  group: sigemi.it
+  names:
+    plural: k8spatterns
+    singular: k8spattern
+    kind: K8sPattern
+    shortNames:
+      - k8sp
+  scope: Namespaced
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              required:
+                - apiVersion
+                - name
+                - type
+              properties:
+                apiVersion:
+                  type: string
+                  description: "Versione interna del pattern (es: v1)."
+                name:
+                  type: string
+                  description: "Nome del pattern (es: Sidecar, Health Probe)."
+                type:
+                  type: string
+                  description: "Categoria generale del pattern (es: Structural, Behavioral)."
+                description:
+                  type: string
+                  description: "Descrizione dettagliata del pattern."
+                referenceLink:
+                  type: string
+                  description: "Link di riferimento alla documentazione."
+                message:
+                  type: string
+                  description: "Messaggio informativo o di raccomandazione."
+                severity:
+                  type: string
+                  description: "Livello di severità (Info, Warning, Critical)."
+                  enum:
+                    - Info
+                    - Warning
+                    - Critical
+                category:
+                  type: string
+                  description: "Categoria di applicazione (Reliability, Security, Performance)."
+                  enum:
+                    - Reliability
+                    - Security
+                    - Performance
+                scores:
+                  type: object
+                  description: "Punteggi dei vari controlli (chiave: nome_filtro, valore: punteggio su 100)."
+                  # numeri interi tra 0 e 100
+                  additionalProperties:
+                    type: integer
+                    minimum: 0
+                    maximum: 100
+                totalScore:
+                  type: integer
+                  description: "Probabilità totale che il pattern sia stato individuato correttamente (percentuale)."
+                  minimum: 0
+                  maximum: 100
+                resources:
+                  type: array
+                  description: "Array delle risorse Kubernetes coinvolte nel pattern."
+                  items:
+                    type: object
+                    required:
+                      - name
+                      - namespace
+                      - uid
+                    properties:
+                      name:
+                        type: string
+                        description: "Nome della risorsa Kubernetes."
+                      namespace:
+                        type: string
+                        description: "Namespace della risorsa Kubernetes."
+                      uid:
+                        type: string
+                        description: "UID della risorsa Kubernetes."
