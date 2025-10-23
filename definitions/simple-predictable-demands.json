@@ -4,34 +4,24 @@
     "metadata": {
         "name": "simple-predictable-demands",
         "displayName": "Simple Predictable Demands",
-        "patternType": "Foundational",
+        "patternType": "FOUNDATIONAL",
         "severity": "Warning",
-        "category": "category",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/definitions",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc",
-        "patternURI": "patternURI"
+        "category": "architecture",
+        "docUrl": "https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/sidecar-pattern.md",
+        "patternURI": "kubepattern://foundational/simple-predictable-demands"
     },
     "spec": {
-        "description": "Questo pattern verifica ogni pod abbia i limiti di risorse CPU e memoria impostati.",
+        "description": "Identifies pods that should implement the sidecar pattern but are incorrectly separated into different pods. The sidecar pattern places helper containers alongside the main application container in the same pod to share lifecycle, network, and storage resources. Common use cases include logging, monitoring, configuration management, and service mesh proxies.",
+        "message": "Pod '{{main-app.metadata.name}}' in namespace '{{main-app.metadata.namespace}}' appears to be separated from its sidecar pod '{{sidecar.metadata.name}}' in namespace '{{sidecar.metadata.namespace}}'. These pods share volumes and likely have a common lifecycle, suggesting they should be combined into a single pod with multiple containers. This would improve resource sharing, deployment atomicity, and reduce network overhead.",
+        "topology": "SINGLE",
         "leader": "single-pod",
-        "message": "Il pod {{single-pod.name}} nel namespace {{single-pod.namespace}} non ha i limiti di risorse CPU e memoria impostati.",
         "resources": [
             {
                 "resource": "Pod",
                 "id": "single-pod",
                 "filters": {
-                    "matchAll": [
-                        {
-                            "key": ".spec.containers[*].resources.limits.cpu",
-                            "operator": "IS_EMPTY",
-                            "values": []
-                        },
-                        {
-                            "key": ".spec.containers[*].resources.limits.memory",
-                            "operator": "IS_EMPTY",
-                            "values": []
-                        }
-                    ],
+                    "matchAll": null,
                     "matchNone": [
                         {
                             "key": ".metadata.namespace",
@@ -43,7 +33,18 @@
                             ]
                         }
                     ],
-                    "matchAny": null
+                    "matchAny": [
+                        {
+                            "key": ".spec.containers[*].resources.limits.cpu",
+                            "operator": "IS_EMPTY",
+                            "values": []
+                        },
+                        {
+                            "key": ".spec.containers[*].resources.limits.memory",
+                            "operator": "IS_EMPTY",
+                            "values": []
+                        }
+                    ]
                 }
             }
         ],
