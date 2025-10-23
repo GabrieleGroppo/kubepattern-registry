@@ -74,10 +74,8 @@
                 "weight": 0.5,
                 "required": true,
                 "shared": false,
-                "resourceIds": [
-                    "main-app",
-                    "sidecar"
-                ]
+                "leader": "main-app",
+                "follower": "sidecar"
             }
         ]
     }
