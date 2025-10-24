@@ -52,7 +52,7 @@ spec:
                     - WARNING
                     - CRITICAL
                 confidence:
-                  type: integer
+                  type: string
                   description: "Livello di confidenza nell'individuazione del pattern. (LOW < 40, MEDIUM 40-70, HIGH > 70)."
                   enum:
                     - LOW
@@ -73,11 +73,11 @@ spec:
                     type: integer
                     minimum: 0
                     maximum: 100
-                totalScore:
-                  type: integer
-                  description: "Probabilità totale che il pattern sia stato individuato correttamente (percentuale)."
-                  minimum: 0
-                  maximum: 100
+#                totalScore:
+#                  type: integer
+#                  description: "Probabilità totale che il pattern sia stato individuato correttamente (percentuale)."
+#                  minimum: 0
+#                  maximum: 100
                 resources:
                   type: array
                   description: "Array delle risorse Kubernetes coinvolte nel pattern."
