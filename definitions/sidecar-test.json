@@ -2,18 +2,18 @@
     "version": "kubepattern.sigemi.it/v1",
     "kind": "Pattern",
     "metadata": {
-        "name": "sidecar-test",
-        "displayName": "Sidecar Test",
-        "patternType": "Structural",
-        "severity": "Info",
-        "category": "logging",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/definitions",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc",
-        "patternURI": "patternURI"
+        "name": "sidecar-anti-pattern",
+        "displayName": "Separated Sidecar Anti-Pattern",
+        "patternType": "STRUCTURAL",
+        "severity": "Warning",
+        "category": "architecture",
+        "docUrl": "https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/sidecar-pattern.md",
+        "patternURI": "kubepattern://structural/sidecar-anti-pattern"
     },
     "spec": {
-        "description": "Identifies pods that might implement a sidecar pattern.",
-        "message": "Pod {{main-app.name}} in namespace {{main-app.namespace}} might implement a sidecar pattern with {{sidecar.name}} in namespace {{sidecar.namespace}}. Consider moving the sidecar into the same pod as the main app to improve management and performance.",
+        "description": "Identifies pods that should implement the sidecar pattern but are incorrectly separated into different pods. The sidecar pattern places helper containers alongside the main application container in the same pod to share lifecycle, network, and storage resources. Common use cases include logging, monitoring, configuration management, and service mesh proxies.",
+        "message": "Pod '{{main-app.metadata.name}}' in namespace '{{main-app.metadata.namespace}}' appears to be separated from its sidecar pod '{{sidecar.metadata.name}}' in namespace '{{sidecar.metadata.namespace}}'. These pods share volumes and likely have a common lifecycle, suggesting they should be combined into a single pod with multiple containers. This would improve resource sharing, deployment atomicity, and reduce network overhead.",
         "topology": "LEADER_FOLLOWER",
         "leader": "main-app",
         "resources": [
@@ -21,7 +21,13 @@
                 "resource": "Pod",
                 "id": "main-app",
                 "filters": {
-                    "matchAll": [],
+                    "matchAll": [
+                        {
+                            "key": ".spec.volumes",
+                            "operator": "EXISTS",
+                            "values": []
+                        }
+                    ],
                     "matchNone": [
                         {
                             "key": ".metadata.namespace",
@@ -40,6 +46,28 @@
                             "values": [
                                 "application",
                                 "frontend",
+                                "backend",
+                                "api",
+                                "web",
+                                "service"
+                            ]
+                        },
+                        {
+                            "key": ".metadata.labels.app",
+                            "operator": "EQUALS",
+                            "values": [
+                                "frontend",
+                                "backend",
+                                "application"
+                            ]
+                        },
+                        {
+                            "key": ".metadata.labels.tier",
+                            "operator": "EQUALS",
+                            "values": [
+                                "web",
+                                "api",
+                                "frontend",
                                 "backend"
                             ]
                         }
@@ -50,8 +78,24 @@
                 "resource": "Pod",
                 "id": "sidecar",
                 "filters": {
-                    "matchAll": [],
-                    "matchNone": [],
+                    "matchAll": [
+                        {
+                            "key": ".spec.volumes",
+                            "operator": "EXISTS",
+                            "values": []
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease"
+                            ]
+                        }
+                    ],
                     "matchAny": [
                         {
                             "key": ".metadata.name",
@@ -59,7 +103,32 @@
                             "values": [
                                 "logging",
                                 "logger",
-                                "log"
+                                "log",
+                                "log-collector",
+                                "log-shipper",
+                                "fluentd",
+                                "filebeat",
+                                "logstash"
+                            ]
+                        },
+                        {
+                            "key": ".metadata.labels.app",
+                            "operator": "EQUALS",
+                            "values": [
+                                "logging",
+                                "logger",
+                                "log-collector"
+                            ]
+                        },
+                        {
+                            "key": ".metadata.labels.component",
+                            "operator": "EQUALS",
+                            "values": [
+                                "log-collector",
+                                "log-shipper",
+                                "logging",
+                                "monitoring",
+                                "metrics"
                             ]
                         }
                     ]
@@ -68,14 +137,16 @@
         ],
         "relationships": [
             {
-                "id": "main-app-sidecar-shared-volume",
+                "id": "shared-volume-mount",
                 "type": "MOUNTS",
-                "description": "Il pod main-app e il pod sidecar montano lo stesso volume.",
-                "weight": 0.5,
+                "description": "Both pods mount volumes with the same name or emptyDir type, indicating they are intended to share storage. In a proper sidecar pattern, these containers should share the same pod-level volume.",
+                "weight": 0.6,
                 "required": true,
-                "shared": false,
-                "leader": "main-app",
-                "follower": "sidecar"
+                "shared": true,
+                "resourceIds": [
+                    "main-app",
+                    "sidecar"
+                ]
             }
         ]
     }
