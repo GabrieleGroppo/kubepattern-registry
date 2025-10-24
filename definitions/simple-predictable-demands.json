@@ -5,7 +5,7 @@
         "name": "simple-predictable-demands",
         "displayName": "Simple Predictable Demands",
         "patternType": "FOUNDATIONAL",
-        "severity": "Warning",
+        "severity": "MEDIUM",
         "category": "architecture",
         "docUrl": "https://kubernetes.io/docs/concepts/workloads/pods/simple-predictable-demands/",
         "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/sidecar-pattern.md",
