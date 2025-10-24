@@ -48,9 +48,16 @@ spec:
                   type: string
                   description: "Livello di severità (Info, Warning, Critical)."
                   enum:
-                    - Info
-                    - Warning
-                    - Critical
+                    - INFO
+                    - WARNING
+                    - CRITICAL
+                confidence:
+                  type: integer
+                  description: "Livello di confidenza nell'individuazione del pattern. (LOW < 40, MEDIUM 40-70, HIGH > 70)."
+                  enum:
+                    - LOW
+                    - MEDIUM
+                    - HIGH
                 category:
                   type: string
                   description: "Categoria di applicazione (Reliability, Security, Performance)."
