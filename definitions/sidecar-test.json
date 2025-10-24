@@ -2,14 +2,13 @@
     "version": "kubepattern.sigemi.it/v1",
     "kind": "Pattern",
     "metadata": {
-        "name": "sidecar-anti-pattern",
-        "displayName": "Separated Sidecar Anti-Pattern",
+        "name": "sidecar",
+        "displayName": "Sidecar",
         "patternType": "STRUCTURAL",
-        "severity": "Warning",
+        "severity": "INFO",
         "category": "architecture",
-        "docUrl": "https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/",
         "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/sidecar-pattern.md",
-        "patternURI": "kubepattern://structural/sidecar-anti-pattern"
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/sidecar-pattern.json"
     },
     "spec": {
         "description": "Identifies pods that should implement the sidecar pattern but are incorrectly separated into different pods. The sidecar pattern places helper containers alongside the main application container in the same pod to share lifecycle, network, and storage resources. Common use cases include logging, monitoring, configuration management, and service mesh proxies.",
@@ -35,7 +34,8 @@
                             "values": [
                                 "kube-system",
                                 "kube-public",
-                                "kube-node-lease"
+                                "kube-node-lease",
+                                "krateo-system"
                             ]
                         }
                     ],
