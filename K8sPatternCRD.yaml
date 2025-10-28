@@ -66,18 +66,22 @@ spec:
                     - Security
                     - Performance
                 scores:
-                  type: object
-                  description: "Punteggi dei vari controlli (chiave: nome_filtro, valore: punteggio su 100)."
-                  # numeri interi tra 0 e 100
-                  additionalProperties:
-                    type: integer
-                    minimum: 0
-                    maximum: 100
-#                totalScore:
-#                  type: integer
-#                  description: "Probabilità totale che il pattern sia stato individuato correttamente (percentuale)."
-#                  minimum: 0
-#                  maximum: 100
+                  type: array
+                  description: "Array dei punteggi dei vari controlli."
+                  items:
+                    type: object
+                    required:
+                      - category
+                      - score
+                    properties:
+                      category:
+                        type: string
+                        description: "Nome della categoria/filtro del controllo."
+                      score:
+                        type: integer
+                        description: "Punteggio su 100."
+                        minimum: 0
+                        maximum: 100
                 resources:
                   type: array
                   description: "Array delle risorse Kubernetes coinvolte nel pattern."
