@@ -8,7 +8,7 @@
         "severity": "WARNING",
         "category": "architecture",
         "docUrl": "https://kubernetes.io/docs/concepts/workloads/pods/pod-priority-predictable-demands/",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/sidecar-pattern.md",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/pod-priority-pattern.md",
         "patternURI": "kubepattern://foundational/pod-priority-predictable-demands"
     },
     "spec": {
