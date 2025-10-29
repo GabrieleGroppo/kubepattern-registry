@@ -24,7 +24,7 @@
                     "matchAll": null,
                     "matchNone": [
                         {
-                            "key": ".metadata.namespace",
+                            "key": ".metadata.name",
                             "operator": "EQUALS",
                             "values": [
                                 "kube-system",
@@ -34,9 +34,7 @@
                             ]
                         }
                     ],
-                    "matchAny": [
-                        
-                    ]
+                    "matchAny": []
                 }
             },
             {
