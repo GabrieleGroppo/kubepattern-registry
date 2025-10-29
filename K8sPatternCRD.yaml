@@ -90,6 +90,7 @@ spec:
                     required:
                       - name
                       - namespace
+                      - role
                       - uid
                     properties:
                       name:
@@ -98,6 +99,9 @@ spec:
                       namespace:
                         type: string
                         description: "Namespace della risorsa Kubernetes."
+                      role:
+                        type: string
+                        description: "Ruolo nel Pattern Kubernetes"
                       uid:
                         type: string
                         description: "UID della risorsa Kubernetes."
