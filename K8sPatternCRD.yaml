@@ -92,7 +92,6 @@ spec:
                     type: object
                     required:
                       - name
-                      - namespace
                       - role
                       - uid
                     properties:
