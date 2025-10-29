@@ -65,6 +65,9 @@ spec:
                     - Reliability
                     - Security
                     - Performance
+                suppress:
+                  type: boolean
+                  description: "Soppresso perchè falso positivo."
                 scores:
                   type: array
                   description: "Array dei punteggi dei vari controlli."
