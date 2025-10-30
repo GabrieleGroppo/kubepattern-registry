@@ -1,5 +1,5 @@
 {
-    "version": "kubepattern.sigemi.it/v1",
+    "version": "kubepattern.it/v1",
     "kind": "Pattern",
     "metadata": {
         "name": "limit-range-predictable-demands",
