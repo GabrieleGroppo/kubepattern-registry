@@ -3,7 +3,7 @@ kind: CustomResourceDefinition
 metadata:
   name: k8spatterns.kubepattern.it
 spec:
-  group: sigemi.it
+  group: kubepattern.it
   names:
     plural: k8spatterns
     singular: k8spattern
