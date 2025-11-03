@@ -9,10 +9,10 @@
         "category": "architecture",
         "docUrl": "https://kubernetes.io/docs/concepts/workloads/pods/resource-quotas-predictable-demands/",
         "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/resource-quotas-pattern.md",
-        "patternURI": "kubepattern://foundational/resource-quotas-predictable-demands"
+        "patternURI": "kubepattern://foundational/resource-quotas-predictable-demands",
+        "description": "Identifies Namespaces that lack of explicit resource quotas. Setting resource quotas for such namespaces is crucial to prevent resource contention, ensure fair resource allocation, and maintain cluster stability. This pattern helps in identifying namespaces that could benefit from defined resource quotas to enhance overall cluster performance and reliability."
     },
     "spec": {
-        "description": "Identifies Namespaces that lack of explicit resource quotas. Setting resource quotas for such namespaces is crucial to prevent resource contention, ensure fair resource allocation, and maintain cluster stability. This pattern helps in identifying namespaces that could benefit from defined resource quotas to enhance overall cluster performance and reliability.",
         "message": "Namespace {{single-namespace.name}} does not have common resource quotas defined for pods, containers, and persistent volumes claims. It is recommended to set appropriate resource quotas to prevent resource contention and ensure stable performance within the cluster.",
         "topology": "SINGLE",
         "leader": "single-namespace",
