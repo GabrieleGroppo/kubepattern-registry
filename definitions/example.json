@@ -133,26 +133,11 @@
                         }
                     ]
                 }
-            },
-            {
-                "resource": "Namespace",
-                "id": "resource-test-namespace",
-                "filters": {
-                    "matchAll": [],
-                    "matchNone": [
-                        {
-                            "key": ".metadata.name",
-                            "operator": "EQUALS",
-                            "values": [
-                                "kube-system",
-                                "kube-public",
-                                "kube-node-lease"
-                            ]
-                        }
-                    ],
-                    "matchAny": []
-                }
             }
+        ],
+        "actors": [
+            "resource-test-leader",
+            "resource-test-follower"
         ],
         "relationships": [
             {
@@ -176,18 +161,20 @@
                 "shared": true,
                 "resourceIds": [
                     "resource-test-leader",
-                    "resource-test-follower",
                     "resource-test-namespace"
                 ]
             }
         ],
+        
         "confidenceThreshold": 0.7,
         "evidence": {
             "required": [
                 "rel-1-shared-volume-mount",
                 "rel-2-namespace-coupling"
             ],
-            "optional": []
+            "optional": [
+                "rel-3-namespace-coupling"
+            ]
         }
     }
 }
