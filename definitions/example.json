@@ -2,23 +2,23 @@
     "version": "kubepattern.it/v1",
     "kind": "Pattern",
     "metadata": {
-        "name": "exemple",
-        "displayName": "Exemple",
+        "name": "example",
+        "displayName": "Example",
         "patternType": "STRUCTURAL",
         "severity": "INFO",
         "category": "testing",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/exemple.md",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/exemple.json",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/example.md",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/example.json",
         "description": "This pattern aims to test kubepattern tool in multiple relationships orchestration."
     },
     "spec": {
         "message": "",
         "topology": "LEADER_FOLLOWER",
-        "leader": "main-app",
+        "leader": "resource-test-leader",
         "resources": [
             {
                 "resource": "Pod",
-                "id": "main-app",
+                "id": "resource-test-leader",
                 "filters": {
                     "matchAll": [
                         {
@@ -76,7 +76,7 @@
             },
             {
                 "resource": "Pod",
-                "id": "sidecar",
+                "id": "resource-test-follower",
                 "filters": {
                     "matchAll": [
                         {
@@ -137,41 +137,35 @@
         ],
         "relationships": [
             {
-                "id": "shared-volume-mount",
+                "id": "rel-1-shared-volume-mount",
                 "type": "MOUNTS",
-                "description": "Both pods mount volumes with the same name or emptyDir type, indicating they are intended to share storage. In a proper sidecar pattern, these containers should share the same pod-level volume.",
+                "description": "Testing relationship 1 - Both pods share the same volume mount.",
                 "weight": 0.6,
                 "required": true,
                 "shared": true,
                 "resourceIds": [
-                    "main-app",
-                    "sidecar"
+                    "resource-test-follower"
                 ]
             },
             {
-                "id": "shared-volume-mount",
-                "type": "MOUNTS",
-                "description": "Both pods mount volumes with the same name or emptyDir type, indicating they are intended to share storage. In a proper sidecar pattern, these containers should share the same pod-level volume.",
+                "id": "rel-2-namespace-coupling",
+                "type": "SAME_NAMESPACE",
+                "description": "Testing relationship 2 - Both pods are deployed in the same namespace.",
                 "weight": 0.6,
                 "required": true,
                 "shared": true,
                 "resourceIds": [
-                    "main-app",
-                    "sidecar"
+                    "resource-test-follower"
                 ]
             }
         ],
         "confidenceThreshold": 0.7,
         "evidence": {
             "required": [
-                "shared-volume-mount",
-                "lifecycle-coupling"
+                "rel-1-shared-volume-mount",
+                "rel-2-namespace-coupling"
             ],
-            "optional": [
-                "network-locality",
-                "functional-assistance",
-                "scheduling-affinity"
-            ]
+            "optional": []
         }
     }
 }
