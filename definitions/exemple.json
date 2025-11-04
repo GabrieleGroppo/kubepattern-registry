@@ -1,0 +1,177 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "exemple",
+        "displayName": "Exemple",
+        "patternType": "STRUCTURAL",
+        "severity": "INFO",
+        "category": "testing",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/exemple.md",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/exemple.json",
+        "description": "This pattern aims to test kubepattern tool in multiple relationships orchestration."
+    },
+    "spec": {
+        "message": "",
+        "topology": "LEADER_FOLLOWER",
+        "leader": "main-app",
+        "resources": [
+            {
+                "resource": "Pod",
+                "id": "main-app",
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".spec.volumes",
+                            "operator": "EXISTS",
+                            "values": []
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ],
+                    "matchAny": [
+                        {
+                            "key": ".metadata.name",
+                            "operator": "EQUALS",
+                            "values": [
+                                "application",
+                                "frontend",
+                                "backend",
+                                "api",
+                                "web",
+                                "service"
+                            ]
+                        },
+                        {
+                            "key": ".metadata.labels.app",
+                            "operator": "EQUALS",
+                            "values": [
+                                "frontend",
+                                "backend",
+                                "application"
+                            ]
+                        },
+                        {
+                            "key": ".metadata.labels.tier",
+                            "operator": "EQUALS",
+                            "values": [
+                                "web",
+                                "api",
+                                "frontend",
+                                "backend"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "resource": "Pod",
+                "id": "sidecar",
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".spec.volumes",
+                            "operator": "EXISTS",
+                            "values": []
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease"
+                            ]
+                        }
+                    ],
+                    "matchAny": [
+                        {
+                            "key": ".metadata.name",
+                            "operator": "EQUALS",
+                            "values": [
+                                "logging",
+                                "logger",
+                                "log",
+                                "log-collector",
+                                "log-shipper",
+                                "fluentd",
+                                "filebeat",
+                                "logstash"
+                            ]
+                        },
+                        {
+                            "key": ".metadata.labels.app",
+                            "operator": "EQUALS",
+                            "values": [
+                                "logging",
+                                "logger",
+                                "log-collector"
+                            ]
+                        },
+                        {
+                            "key": ".metadata.labels.component",
+                            "operator": "EQUALS",
+                            "values": [
+                                "log-collector",
+                                "log-shipper",
+                                "logging",
+                                "monitoring",
+                                "metrics"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "relationships": [
+            {
+                "id": "shared-volume-mount",
+                "type": "MOUNTS",
+                "description": "Both pods mount volumes with the same name or emptyDir type, indicating they are intended to share storage. In a proper sidecar pattern, these containers should share the same pod-level volume.",
+                "weight": 0.6,
+                "required": true,
+                "shared": true,
+                "resourceIds": [
+                    "main-app",
+                    "sidecar"
+                ]
+            },
+            {
+                "id": "shared-volume-mount",
+                "type": "MOUNTS",
+                "description": "Both pods mount volumes with the same name or emptyDir type, indicating they are intended to share storage. In a proper sidecar pattern, these containers should share the same pod-level volume.",
+                "weight": 0.6,
+                "required": true,
+                "shared": true,
+                "resourceIds": [
+                    "main-app",
+                    "sidecar"
+                ]
+            }
+        ],
+        "confidenceThreshold": 0.7,
+        "evidence": {
+            "required": [
+                "shared-volume-mount",
+                "lifecycle-coupling"
+            ],
+            "optional": [
+                "network-locality",
+                "functional-assistance",
+                "scheduling-affinity"
+            ]
+        }
+    }
+}
