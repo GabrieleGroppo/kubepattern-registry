@@ -161,7 +161,7 @@
                 "shared": true,
                 "resourceIds": [
                     "resource-test-leader",
-                    "resource-test-namespace"
+                    "resource-test-follower"
                 ]
             }
         ],
