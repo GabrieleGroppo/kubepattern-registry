@@ -12,7 +12,7 @@
         "description": "This pattern aims to test kubepattern tool in multiple relationships orchestration."
     },
     "spec": {
-        "message": "",
+        "message": "This is an example pattern to test multiple relationships orchestration. Pods {{resource-test-leader.name}} and {{resource-test-follower.name}} share multiple relationships.",
         "topology": "LEADER_FOLLOWER",
         "leader": "resource-test-leader",
         "resources": [
@@ -164,17 +164,6 @@
                     "resource-test-follower"
                 ]
             }
-        ],
-        
-        "confidenceThreshold": 0.7,
-        "evidence": {
-            "required": [
-                "rel-1-shared-volume-mount",
-                "rel-2-namespace-coupling"
-            ],
-            "optional": [
-                "rel-3-namespace-coupling"
-            ]
-        }
+        ]
     }
 }
