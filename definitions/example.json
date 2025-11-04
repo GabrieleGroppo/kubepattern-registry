@@ -133,6 +133,25 @@
                         }
                     ]
                 }
+            },
+            {
+                "resource": "Namespace",
+                "id": "resource-test-namespace",
+                "filters": {
+                    "matchAll": [],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.name",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease"
+                            ]
+                        }
+                    ],
+                    "matchAny": []
+                }
             }
         ],
         "relationships": [
@@ -144,18 +163,21 @@
                 "required": true,
                 "shared": true,
                 "resourceIds": [
+                    "resource-test-leader",
                     "resource-test-follower"
                 ]
             },
             {
                 "id": "rel-2-namespace-coupling",
-                "type": "SAME_NAMESPACE",
+                "type": "IS_NAMESPACE_OF",
                 "description": "Testing relationship 2 - Both pods are deployed in the same namespace.",
                 "weight": 0.6,
                 "required": true,
                 "shared": true,
                 "resourceIds": [
-                    "resource-test-follower"
+                    "resource-test-leader",
+                    "resource-test-follower",
+                    "resource-test-namespace"
                 ]
             }
         ],
