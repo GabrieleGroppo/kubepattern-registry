@@ -139,7 +139,7 @@
             "resource-test-leader",
             "resource-test-follower"
         ],
-        "relationships": [
+        "commonRelationships": [
             {
                 "id": "rel-1-shared-volume-mount",
                 "type": "MOUNTS",

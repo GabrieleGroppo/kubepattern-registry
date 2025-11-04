@@ -135,7 +135,7 @@
                 }
             }
         ],
-        "relationships": [
+        "commonRelationships": [
             {
                 "id": "shared-volume-mount",
                 "type": "MOUNTS",
@@ -149,17 +149,6 @@
                 ]
             }
         ],
-        "confidenceThreshold": 0.7,
-        "evidence": {
-            "required": [
-                "shared-volume-mount",
-                "lifecycle-coupling"
-            ],
-            "optional": [
-                "network-locality",
-                "functional-assistance",
-                "scheduling-affinity"
-            ]
-        }
+        "confidenceThreshold": 0.7
     }
 }
