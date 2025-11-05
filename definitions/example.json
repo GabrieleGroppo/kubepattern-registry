@@ -19,6 +19,7 @@
             {
                 "resource": "Pod",
                 "id": "resource-test-leader",
+                "leader": true,
                 "filters": {
                     "matchAll": [
                         {

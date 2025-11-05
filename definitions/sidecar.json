@@ -14,11 +14,11 @@
     "spec": {
         "message": "Pod '{{main-app.name}}' in namespace '{{main-app.namespace}}' appears to be separated from its sidecar pod '{{sidecar.name}}' in namespace '{{sidecar.namespace}}'. These pods share volumes and likely have a common lifecycle, suggesting they should be combined into a single pod with multiple containers. This would improve resource sharing, deployment atomicity, and reduce network overhead.",
         "topology": "LEADER_FOLLOWER",
-        "leader": "main-app",
         "resources": [
             {
                 "resource": "Pod",
                 "id": "main-app",
+                "leader": true,
                 "filters": {
                     "matchAll": [
                         {
@@ -148,7 +148,6 @@
                     "sidecar"
                 ]
             }
-        ],
-        "confidenceThreshold": 0.7
+        ]
     }
 }
