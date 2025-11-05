@@ -41,7 +41,6 @@
                 "resource": "ResourceQuota",
                 "id": "resource-quota-in-namespace",
                 "filters": {
-                    "matchAll": null,
                     "matchNone": [
                         {
                             "key": ".metadata.namespace",
