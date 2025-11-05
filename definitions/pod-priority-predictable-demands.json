@@ -15,11 +15,11 @@
     "spec": {
         "message": "Pod {{single-pod.name}} in namespace {{single-pod.namespace}} does not have a priority class defined. It is recommended to set an appropriate priority class to ensure stable performance within the cluster.",
         "topology": "SINGLE",
-        "leader": "single-pod",
         "resources": [
             {
                 "resource": "Pod",
                 "id": "single-pod",
+                "leader": true,
                 "filters": {
                     "matchAll": null,
                     "matchNone": [

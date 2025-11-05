@@ -15,11 +15,11 @@
     "spec": {
         "message": "Pod {{single-pod.name}} in namespace {{single-pod.namespace}} does not have resource limits defined for CPU and/or memory. It is recommended to set appropriate resource limits to prevent resource contention and ensure stable performance within the cluster.",
         "topology": "SINGLE",
-        "leader": "single-pod",
         "resources": [
             {
                 "resource": "Pod",
                 "id": "single-pod",
+                "leader": true,
                 "filters": {
                     "matchAll": null,
                     "matchNone": [
