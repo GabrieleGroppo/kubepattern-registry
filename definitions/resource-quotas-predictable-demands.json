@@ -67,6 +67,9 @@
                     "resource-quota-in-namespace"
                 ]
             }
+        ],
+        "actors": [
+            "single-namespace"
         ]
     }
 }

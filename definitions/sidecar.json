@@ -135,6 +135,10 @@
                 }
             }
         ],
+        "actors": [
+            "main-app",
+            "sidecar"
+        ],
         "commonRelationships": [
             {
                 "id": "shared-volume-mount",

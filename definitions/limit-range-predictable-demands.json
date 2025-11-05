@@ -58,6 +58,9 @@
                 }
             }
         ],
+        "actors": [
+            "single-namespace"
+        ],
         "relationships": [
             {
                 "id": "limit-range-in-namespace",

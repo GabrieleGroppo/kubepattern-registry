@@ -54,6 +54,9 @@
                     ]
                 }
             }
+        ],
+        "actors": [
+            "single-pod"
         ]
     }
 }
