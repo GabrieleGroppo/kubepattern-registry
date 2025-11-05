@@ -21,7 +21,6 @@
                 "id": "single-namespace",
                 "leader": true,
                 "filters": {
-                    "matchAll": null,
                     "matchNone": [
                         {
                             "key": ".metadata.name",
@@ -41,7 +40,6 @@
                 "resource": "LimitRange",
                 "id": "limit-range-in-namespace",
                 "filters": {
-                    "matchAll": null,
                     "matchNone": [
                         {
                             "key": ".metadata.namespace",

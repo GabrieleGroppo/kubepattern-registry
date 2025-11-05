@@ -21,7 +21,6 @@
                 "id": "single-pod",
                 "leader": true,
                 "filters": {
-                    "matchAll": null,
                     "matchNone": [
                         {
                             "key": ".metadata.namespace",
