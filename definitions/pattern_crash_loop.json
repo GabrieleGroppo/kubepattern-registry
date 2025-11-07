@@ -1,0 +1,47 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "crash-loop-backoff-resource-suggestion",
+        "displayName": "CrashLoopBackOff Resource Suggestion",
+        "patternType": "BEHAVIORAL",
+        "severity": "CRITICAL",
+        "category": "Performance",
+        "description": "Identifies pods in CrashLoopBackOff state, which often indicates resource constraints, startup failures due to insufficient resources, or application errors caused by resource pressure."
+    },
+    "spec": {
+        "message": "Pod {{crashloop-pod.name}} in namespace {{crashloop-pod.namespace}} is in CrashLoopBackOff state. This may indicate insufficient resources (CPU/memory) preventing the container from starting successfully. Review and consider increasing resource limits.",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Pod",
+                "id": "crashloop-pod",
+                "leader": true,
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".status.containerStatuses[*].state.waiting.reason",
+                            "operator": "EQUALS",
+                            "values": ["CrashLoopBackOff"]
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "actors": [
+            "crashloop-pod"
+        ]
+    }
+}

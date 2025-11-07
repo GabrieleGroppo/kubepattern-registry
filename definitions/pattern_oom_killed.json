@@ -1,0 +1,47 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "oom-killed-resource-suggestion",
+        "displayName": "OOM Killed Resource Suggestion",
+        "patternType": "BEHAVIORAL",
+        "severity": "CRITICAL",
+        "category": "Performance",
+        "description": "Identifies pods whose containers have been terminated due to Out Of Memory (OOM) errors. This is a clear indicator that memory limits are insufficient and should be increased."
+    },
+    "spec": {
+        "message": "Pod {{oom-pod.name}} in namespace {{oom-pod.namespace}} has containers that were terminated due to OOMKilled (reason: {{oom-pod.status.containerStatuses[*].lastState.terminated.reason}}). The current memory limit is insufficient. Increase the memory limit to prevent future OOM terminations.",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Pod",
+                "id": "oom-pod",
+                "leader": true,
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".status.containerStatuses[*].lastState.terminated.reason",
+                            "operator": "EQUALS",
+                            "values": ["OOMKilled"]
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "actors": [
+            "oom-pod"
+        ]
+    }
+}

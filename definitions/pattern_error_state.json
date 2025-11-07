@@ -1,0 +1,47 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "error-state-resource-suggestion",
+        "displayName": "Error State Resource Suggestion",
+        "patternType": "BEHAVIORAL",
+        "severity": "WARNING",
+        "category": "Performance",
+        "description": "Identifies pods in Error state that may be experiencing resource-related failures. Error states can indicate startup failures, crashes, or runtime errors potentially caused by insufficient resources."
+    },
+    "spec": {
+        "message": "Pod {{error-pod.name}} in namespace {{error-pod.namespace}} is in Error state ({{error-pod.status.phase}}). This may indicate resource constraints or application failures due to insufficient CPU/memory. Review resource allocation and consider increasing limits.",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Pod",
+                "id": "error-pod",
+                "leader": true,
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".status.phase",
+                            "operator": "EQUALS",
+                            "values": ["Failed"]
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "actors": [
+            "error-pod"
+        ]
+    }
+}

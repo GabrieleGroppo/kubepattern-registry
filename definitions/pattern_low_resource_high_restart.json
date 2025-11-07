@@ -1,0 +1,64 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "low-resources-with-restarts",
+        "displayName": "Low Resources With Restarts",
+        "patternType": "BEHAVIORAL",
+        "severity": "WARNING",
+        "category": "Performance",
+        "description": "Identifies pods with very low memory limits (under 128Mi) that also have restart counts, suggesting the allocated resources are insufficient for stable operation."
+    },
+    "spec": {
+        "message": "Pod {{constrained-pod.name}} in namespace {{constrained-pod.namespace}} has very low memory limits ({{constrained-pod.spec.containers[*].resources.limits.memory}}) and has restarted {{constrained-pod.status.containerStatuses[*].restartCount}} times. Consider increasing memory allocation to improve stability.",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Pod",
+                "id": "constrained-pod",
+                "leader": true,
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".spec.containers[*].resources.limits.memory",
+                            "operator": "EXISTS",
+                            "values": []
+                        },
+                        {
+                            "key": ".status.containerStatuses[*].restartCount",
+                            "operator": "GREATER_THAN",
+                            "values": ["1"]
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ],
+                    "matchAny": [
+                        {
+                            "key": ".spec.containers[*].resources.limits.memory",
+                            "operator": "EQUALS",
+                            "values": [
+                                "64Mi",
+                                "32Mi",
+                                "16Mi",
+                                "128Mi"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "actors": [
+            "constrained-pod"
+        ]
+    }
+}
