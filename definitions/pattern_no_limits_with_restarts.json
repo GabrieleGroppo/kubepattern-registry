@@ -10,7 +10,7 @@
         "description": "Identifies pods without resource limits that are experiencing restarts. While unlimited resources can cause cluster-wide issues, restarts in such pods suggest they may need explicit limits to prevent OOM kills by the node."
     },
     "spec": {
-        "message": "Pod {{unlimited-pod.name}} in namespace {{unlimited-pod.namespace}} has no memory limits defined and has restarted {{unlimited-pod.status.containerStatuses[*].restartCount}} times. Without limits, the pod may be killed by the node's OOM killer. Set appropriate memory limits to ensure predictable behavior.",
+        "message": "Pod {{unlimited-pod.name}} in namespace {{unlimited-pod.namespace}} has no memory limits defined and has restarted many times. Without limits, the pod may be killed by the node's OOM killer. Set appropriate memory limits to ensure predictable behavior.",
         "topology": "SINGLE",
         "resources": [
             {

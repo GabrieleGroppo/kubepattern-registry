@@ -10,7 +10,7 @@
         "description": "Identifies pods with very low memory limits (under 128Mi) that also have restart counts, suggesting the allocated resources are insufficient for stable operation."
     },
     "spec": {
-        "message": "Pod {{constrained-pod.name}} in namespace {{constrained-pod.namespace}} has very low memory limits ({{constrained-pod.spec.containers[*].resources.limits.memory}}) and has restarted {{constrained-pod.status.containerStatuses[*].restartCount}} times. Consider increasing memory allocation to improve stability.",
+        "message": "Pod {{constrained-pod.name}} in namespace {{constrained-pod.namespace}} has very low memory limits and has restarted many times. Consider increasing memory allocation to improve stability.",
         "topology": "SINGLE",
         "resources": [
             {

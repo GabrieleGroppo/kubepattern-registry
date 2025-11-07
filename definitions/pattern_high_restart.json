@@ -10,7 +10,7 @@
         "description": "Identifies pods with high restart counts that may indicate resource constraints (OOM, CPU throttling). Pods that restart frequently often need increased memory or CPU limits to maintain stability."
     },
     "spec": {
-        "message": "Pod {{unstable-pod.name}} in namespace {{unstable-pod.namespace}} has a high restart count ({{unstable-pod.status.containerStatuses[*].restartCount}}). This may indicate resource constraints such as Out Of Memory (OOM) errors or CPU throttling. Consider increasing memory and/or CPU limits for this pod.",
+        "message": "Pod {{unstable-pod.name}} in namespace {{unstable-pod.namespace}} has a high restart count). This may indicate resource constraints such as Out Of Memory (OOM) errors or CPU throttling. Consider increasing memory and/or CPU limits for this pod.",
         "topology": "SINGLE",
         "resources": [
             {
