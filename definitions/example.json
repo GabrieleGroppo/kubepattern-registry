@@ -75,6 +75,25 @@
                     ]
                 }
             },
+                        {
+                "resource": "Pod",
+                "id": "resource-test-leader",
+                "leader": true,
+                "filters": {
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ]
+                }
+            },
             {
                 "resource": "Pod",
                 "id": "resource-test-follower",
@@ -163,6 +182,20 @@
                 "resourceIds": [
                     "resource-test-leader",
                     "resource-test-follower"
+                ]
+            }
+        ],
+        "relationship": [
+            {
+                "id": "rel-namespace",
+                "type": "IS_NAMESPACE_OF",
+                "description": "Testing relationship.",
+                "weight": 0.6,
+                "required": true,
+                "shared": true,
+                "resourceIds": [
+                    "resource-test-leader",
+                    "resource-test-namespace"
                 ]
             }
         ]
