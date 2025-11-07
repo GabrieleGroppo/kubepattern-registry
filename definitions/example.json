@@ -75,25 +75,6 @@
                     ]
                 }
             },
-                        {
-                "resource": "Pod",
-                "id": "resource-test-leader",
-                "leader": true,
-                "filters": {
-                    "matchNone": [
-                        {
-                            "key": ".metadata.namespace",
-                            "operator": "EQUALS",
-                            "values": [
-                                "kube-system",
-                                "kube-public",
-                                "kube-node-lease",
-                                "krateo-system"
-                            ]
-                        }
-                    ]
-                }
-            },
             {
                 "resource": "Pod",
                 "id": "resource-test-follower",
