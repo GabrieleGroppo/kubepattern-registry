@@ -7,13 +7,12 @@
         "patternType": "FOUNDATIONAL",
         "severity": "WARNING",
         "category": "architecture",
-        "docUrl": "https://kubernetes.io/docs/concepts/workloads/pods/limit-range-predictable-demands/",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
         "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/limit-range-pattern.md",
-        "patternURI": "kubepattern://foundational/limit-range-predictable-demands",
         "description": "Identifies Namespaces that lack of explicit resource limits. Setting resource limits for such namespaces is crucial to prevent resource contention, ensure fair resource allocation, and maintain cluster stability. This pattern helps in identifying namespaces that could benefit from defined resource limits to enhance overall cluster performance and reliability."
     },
     "spec": {
-        "message": "Namespace {{single-namespace.name}} does not have common resource limits defined for pods, containers, and persistent volumes claims. It is recommended to set appropriate resource limits to prevent resource contention and ensure stable performance within the cluster.",
+        "message": "Namespace {{single-namespace.name}} does not have common resource limits defined.",
         "topology": "SINGLE",
         "resources": [
             {

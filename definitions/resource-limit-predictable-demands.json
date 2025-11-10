@@ -7,13 +7,12 @@
         "patternType": "FOUNDATIONAL",
         "severity": "WARNING",
         "category": "architecture",
-        "docUrl": "https://kubernetes.io/docs/concepts/workloads/pods/resource-limit-predictable-demands/",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/resource-limit-pattern.md",
-        "patternURI": "kubepattern://foundational/resource-limit-predictable-demands",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/resource-limit-predictable-demands.json",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
         "description": "Identifies pods that lack of explicit resource limits. Setting resource limits for such pods is crucial to prevent resource contention, ensure fair resource allocation, and maintain cluster stability. This pattern helps in identifying pods that could benefit from defined resource limits to enhance overall cluster performance and reliability."
     },
     "spec": {
-        "message": "Pod {{single-pod.name}} in namespace {{single-pod.namespace}} does not have resource limits defined for CPU and/or memory. It is recommended to set appropriate resource limits to prevent resource contention and ensure stable performance within the cluster.",
+        "message": "Pod {{single-pod.name}} in namespace {{single-pod.namespace}} does not have resource limits defined for CPU and/or memory.",
         "topology": "SINGLE",
         "resources": [
             {

@@ -7,12 +7,12 @@
         "patternType": "STRUCTURAL",
         "severity": "INFO",
         "category": "testing",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/example.md",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/example.json",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/example.json",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
         "description": "This pattern aims to test kubepattern tool in multiple relationships orchestration."
     },
     "spec": {
-        "message": "This is an example pattern to test multiple relationships orchestration. Pods {{resource-test-leader.name}} and {{resource-test-follower.name}} share multiple relationships.",
+        "message": "Example: Pods {{resource-test-leader.name}} and {{resource-test-follower.name}} may have problems.",
         "topology": "LEADER_FOLLOWER",
         "leader": "resource-test-leader",
         "resources": [

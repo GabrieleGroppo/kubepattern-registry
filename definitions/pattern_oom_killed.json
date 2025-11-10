@@ -7,10 +7,12 @@
         "patternType": "BEHAVIORAL",
         "severity": "CRITICAL",
         "category": "Performance",
-        "description": "Identifies pods whose containers have been terminated due to Out Of Memory (OOM) errors. This is a clear indicator that memory limits are insufficient and should be increased."
+        "description": "Identifies pods whose containers have been terminated due to Out Of Memory (OOM) errors. This is a clear indicator that memory limits are insufficient and should be increased.",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/oom-killed-resource-suggestion.json",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md"
     },
     "spec": {
-        "message": "Pod {{oom-pod.name}} in namespace {{oom-pod.namespace}} has containers that were terminated due to OOMKilled). Maybe the current memory limit is insufficient. Increase the memory limit to prevent future OOM terminations.",
+        "message": "Pod {{oom-pod.name}} in namespace {{oom-pod.namespace}} has containers that were terminated due to OOMKilled.",
         "topology": "SINGLE",
         "resources": [
             {

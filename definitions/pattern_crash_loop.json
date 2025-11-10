@@ -10,7 +10,7 @@
         "description": "Identifies pods in CrashLoopBackOff state, which often indicates resource constraints, startup failures due to insufficient resources, or application errors caused by resource pressure."
     },
     "spec": {
-        "message": "Pod {{crashloop-pod.name}} in namespace {{crashloop-pod.namespace}} is in CrashLoopBackOff state. This may indicate insufficient resources (CPU/memory) preventing the container from starting successfully. Review and consider increasing resource limits.",
+        "message": "Pod {{crashloop-pod.name}} in namespace {{crashloop-pod.namespace}} is in CrashLoopBackOff state.",
         "topology": "SINGLE",
         "resources": [
             {

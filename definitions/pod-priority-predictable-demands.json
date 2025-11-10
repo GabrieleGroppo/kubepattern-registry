@@ -7,13 +7,13 @@
         "patternType": "FOUNDATIONAL",
         "severity": "WARNING",
         "category": "architecture",
-        "docUrl": "https://kubernetes.io/docs/concepts/workloads/pods/pod-priority-predictable-demands/",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/pod-priority-pattern.md",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/pod-priority-predictable-demands.json",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
         "patternURI": "kubepattern://foundational/pod-priority-predictable-demands",
         "description": "Identifies pods that lack of explicit priority settings. Setting priority for such pods is crucial to prevent resource contention, ensure fair resource allocation, and maintain cluster stability. This pattern helps in identifying pods that could benefit from defined priority to enhance overall cluster performance and reliability."
     },
     "spec": {
-        "message": "Pod {{single-pod.name}} in namespace {{single-pod.namespace}} does not have a priority class defined. It is recommended to set an appropriate priority class to ensure stable performance within the cluster.",
+        "message": "Pod {{single-pod.name}} in namespace {{single-pod.namespace}} does not have a priority class defined.",
         "topology": "SINGLE",
         "resources": [
             {
