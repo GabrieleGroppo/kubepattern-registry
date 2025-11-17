@@ -1,0 +1,166 @@
+
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.ale12-test-composition-builds-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.ale12-test-composition-builds-panel-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.ale12-test-composition-cve-column-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.ale12-test-composition-cve-column-panel-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.ale12-test-composition-pods-logs-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.ale12-test-composition-panel-pods-logs-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.ale12-test-composition-status-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.ale12-test-composition-status-panel-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.javaproject-composition-builds-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.javaproject-composition-builds-panel-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.javaproject-composition-cve-column-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.javaproject-composition-cve-column-panel-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.javaproject-composition-pods-logs-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.javaproject-composition-panel-pods-logs-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.javaproject-composition-status-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.javaproject-composition-status-panel-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.kubepattern-composition-builds-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.kubepattern-composition-builds-panel-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.kubepattern-composition-cve-column-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.kubepattern-composition-cve-column-panel-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.kubepattern-composition-pods-logs-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.kubepattern-composition-panel-pods-logs-table"
+}
+{
+  "source": "cliente1.widgets.templates.krateo.io/v1beta1.Panel.kubepattern-composition-status-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "cliente1.widgets.templates.krateo.io/v1beta1.Table.kubepattern-composition-status-panel-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Panel.admin-page-composition-definitions-column-panel-1",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.admin-page-composition-definitions-column-panel-row-1-namespaces-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Panel.admin-page-composition-definitions-column-panel-2",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.admin-page-composition-definitions-column-panel-row-2-composition-definitions-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Panel.admin-page-compositions-column-panel-1",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.admin-page-compositions-column-panel-row-1-providers-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Panel.admin-page-compositions-column-panel-2",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.admin-page-compositions-column-panel-row-2-compositions-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Panel.admin-page-krateo-column-panel-1",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.admin-page-krateo-column-panel-row-1-status-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Panel.admin-page-krateo-column-panel-2",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.admin-page-krateo-column-panel-row-2-logs-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Panel.admin-page-users-column-panel-1",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.admin-page-users-column-panel-row-1-users-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Panel.admin-page-users-column-panel-2",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.admin-page-users-column-panel-row-2-permissions-table"
+}
+{
+  "source": "overview-ns.widgets.templates.krateo.io/v1beta1.Panel.compositions-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "overview-ns.widgets.templates.krateo.io/v1beta1.Table.compositions-table"
+}
+{
+  "source": "platform-admins.widgets.templates.krateo.io/v1beta1.Panel.users-empty-page-keycloak-users-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "platform-admins.widgets.templates.krateo.io/v1beta1.Table.keycloak-users-table"
+}
+{
+  "source": "platform-admins.widgets.templates.krateo.io/v1beta1.Panel.users-empty-page-local-users-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "platform-admins.widgets.templates.krateo.io/v1beta1.Table.local-users-table"
+}
+{
+  "source": "security-dashboard-ns.widgets.templates.krateo.io/v1beta1.Panel.cve-list-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "security-dashboard-ns.widgets.templates.krateo.io/v1beta1.Table.cve-list-table"
+}
+{
+  "source": "security-dashboard-ns.widgets.templates.krateo.io/v1beta1.Panel.cve-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "security-dashboard-ns.widgets.templates.krateo.io/v1beta1.Table.cve-table"
+}
+{
+  "source": "security-dashboard-ns.widgets.templates.krateo.io/v1beta1.Panel.k-patterns-table-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "security-dashboard-ns.widgets.templates.krateo.io/v1beta1.Table.k-patterns-table"
+}
+{
+  "source": "security-dashboard-ns.widgets.templates.krateo.io/v1beta1.Panel.sbom-panel",
+  "type": "REFERENCES_KRATEO",
+  "target": "security-dashboard-ns.widgets.templates.krateo.io/v1beta1.Table.sbom-list-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Row.dashboard-blueprints-panel-row",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.dashboard-blueprints-panel-row-table"
+}
+{
+  "source": "krateo-system.widgets.templates.krateo.io/v1beta1.Row.dashboard-compositions-panel-row",
+  "type": "REFERENCES_KRATEO",
+  "target": "krateo-system.widgets.templates.krateo.io/v1beta1.Table.dashboard-compositions-panel-row-table"
+}
+{
+  "source": "platform-admins.widgets.templates.krateo.io/v1beta1.Row.k8s-resources-filter-row",
+  "type": "REFERENCES_KRATEO",
+  "target": "platform-admins.widgets.templates.krateo.io/v1beta1.Table.k8s-resources-table"
+}
+{
+  "source": "platform-admins.widgets.templates.krateo.io/v1beta1.Row.multiple-license-ops-row",
+  "type": "REFERENCES_KRATEO",
+  "target": "platform-admins.widgets.templates.krateo.io/v1beta1.Table.multiple-license-table"
+}
+{
+  "source": "platform-admins.widgets.templates.krateo.io/v1beta1.Row.multiple-license-platform-row",
+  "type": "REFERENCES_KRATEO",
+  "target": "platform-admins.widgets.templates.krateo.io/v1beta1.Table.multiple-license-table"
+}
+{
+  "source": "platform-admins.widgets.templates.krateo.io/v1beta1.Row.multiple-license-secops-row",
+  "type": "REFERENCES_KRATEO",
+  "target": "platform-admins.widgets.templates.krateo.io/v1beta1.Table.multiple-license-table"
+}

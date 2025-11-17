@@ -1,0 +1,1234 @@
+apiVersion: v1
+items:
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-02de729e
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976845007005"
+    uid: 22988cd6-5284-414e-92a2-640f83cd2325
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace cnrm-system does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: cnrm-system
+      role: single-namespace
+      uid: 6d4f5feb-fc83-4cf6-ad6e-9d6448e886ad
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-05658562
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977453103006"
+    uid: 2fba29f2-c17b-436f-83e6-e3b78d4f064e
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace kargo-microservices does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: kargo-microservices
+      role: single-namespace
+      uid: d975ba84-4964-4261-920e-eb0fe27978e6
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-088c2e7b
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977118575011"
+    uid: 6408dbe5-ea06-4458-b494-96cf3759fab7
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace gke-managed-volumepopulator does not have common resource limits
+      defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: gke-managed-volumepopulator
+      role: single-namespace
+      uid: 954d804f-0c3d-474d-abf8-217d7754af31
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:58Z"
+    generation: 1
+    name: limit-range-predictable-demands-09e88e0b
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380978037327017"
+    uid: ed3eeee5-aa03-4c94-afa9-391014480860
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace test-restaction does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: test-restaction
+      role: single-namespace
+      uid: 4d1b3f6e-95b1-4e98-983d-691d4e28e0e8
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-1d1667b0
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977493631015"
+    uid: 9248a425-7f04-4255-9f07-7874028493fa
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace krateo-buildpanelobject-ns does not have common resource limits
+      defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: krateo-buildpanelobject-ns
+      role: single-namespace
+      uid: 63bfcdc5-dd28-4162-8bc9-61a28008eab1
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-21ae80ef
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976493903000"
+    uid: 3fa428e7-0d6e-4eda-81ab-57991840ead9
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace cassiopea-startup does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: cassiopea-startup
+      role: single-namespace
+      uid: 3778f026-80a7-4bee-94ca-2937eac5da95
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-23956d43
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976891055018"
+    uid: e0308b1e-0668-43ba-8015-63f654588b8b
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace configconnector-operator-system does not have common resource
+      limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: configconnector-operator-system
+      role: single-namespace
+      uid: a53f22a7-4a79-4544-bd3f-2005649bc859
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-2603e451
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977178511002"
+    uid: 4a20e41c-5fd1-4ea5-a588-860694035d07
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace gmp-public does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: gmp-public
+      role: single-namespace
+      uid: 76fb52d7-20bd-4d7d-8397-bc71487a35a6
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-27042c72
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976688159024"
+    uid: ffb0df24-0968-442c-be9f-91a0f3bb3423
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace cliente1-admin does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: cliente1-admin
+      role: single-namespace
+      uid: 180b99ba-3aba-495b-bab0-78a62cc1cf8c
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-3b034ab3
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977836031014"
+    uid: 6af05519-b323-4f48-ab1e-5d9af4dd9332
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace sonarqube does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: sonarqube
+      role: single-namespace
+      uid: 9d7e0c91-2e10-4f66-8639-aa398d53a6dd
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-48308d1a
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977354447005"
+    uid: 7b7853ba-313e-4d1b-b2a6-c3d509a79d2d
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace kargo does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: kargo
+      role: single-namespace
+      uid: 33916d92-043f-4848-934e-591c3af250d6
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-4853c470
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977223487009"
+    uid: a5d9d793-11f1-4a13-bf97-78ffd26cc865
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace gmp-system does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: gmp-system
+      role: single-namespace
+      uid: 60d38384-d2ef-41a0-9f76-3d0c6c611c96
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-4b07a963
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977030399017"
+    uid: 39573a1d-b9d8-47d1-ac97-22e9fac16ee8
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace gke-managed-cim does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: gke-managed-cim
+      role: single-namespace
+      uid: 77b58ad7-8cb1-46d1-8c8a-d8e3d38c405d
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-538770dc
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977586495023"
+    uid: 9dfe8f37-8b3a-4851-8f77-1585f4c35885
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace kubepattern does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: kubepattern
+      role: single-namespace
+      uid: 89038681-fd6f-4362-a079-6f2d4226ab4d
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-5550c0fa
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976445103015"
+    uid: 9a250d92-5d10-4db3-9d81-e02ab6d2e3e3
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace buttons-build-ns does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: buttons-build-ns
+      role: single-namespace
+      uid: 30617af1-0e9c-4c59-a6cc-58267df8d56e
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-5f5096ee
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977628079009"
+    uid: 5a0904f4-04ff-49c9-835a-c6a6290b207a
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace multiambiente-ns does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: multiambiente-ns
+      role: single-namespace
+      uid: 0d45bec8-3e16-455a-84d0-dcae5f2ad802
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-6cfdb2bd
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976616767024"
+    uid: 1fab612e-88c7-471e-84ba-c9240fd8d2df
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace cliente1 does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: cliente1
+      role: single-namespace
+      uid: a8c52363-b6ad-45ec-bd80-ccd7d39230b4
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-8162d48e
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977069951000"
+    uid: e97499b9-9839-4aa8-8a63-462b0427ea42
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace gke-managed-system does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: gke-managed-system
+      role: single-namespace
+      uid: 4aa12cd4-1675-4188-a2e4-8bc1bab2ff73
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-86d291e6
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976392927021"
+    uid: 5bd0c644-6b13-4be3-b625-87670475b7a3
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace ale12-test does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: ale12-test
+      role: single-namespace
+      uid: 0c0b0c4c-27e0-46db-b554-f046f419474e
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-8ecfe023
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977879279002"
+    uid: b76b101f-ce17-4368-a663-15154639c4ea
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace test-blueprint-page does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: test-blueprint-page
+      role: single-namespace
+      uid: fc9d80bc-371e-4939-9a56-51a645aefda4
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-a2c4a57f
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976802063014"
+    uid: f977ad31-e6c1-4254-b6e4-cb6b5db1c9ba
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace cliente2-admin does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: cliente2-admin
+      role: single-namespace
+      uid: a54bbb5b-13e8-433c-bf1e-d70aca233782
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-a4f293b1
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977792847023"
+    uid: d1bac2f3-8d75-43d1-a59a-b4894e568e1a
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace security-dashboard-ns does not have common resource limits
+      defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: security-dashboard-ns
+      role: single-namespace
+      uid: fd0f1640-a611-41be-97da-3a6477a5cbf3
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-b07ceb5e
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976560591001"
+    uid: bffdcb8a-616c-450b-814e-6b4e5fc1b1ee
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace cert-manager does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: cert-manager
+      role: single-namespace
+      uid: eaf6ad51-be50-4031-ab75-d1c39e6d909a
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-b528adcf
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977751391012"
+    uid: e30e4d46-b94c-43dc-af73-f76e2a87d776
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace platform-admins does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: platform-admins
+      role: single-namespace
+      uid: dde30a6e-f8bf-4585-a471-4227717deb4a
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-b599d75f
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977400991001"
+    uid: 2e84088e-751a-495b-977f-1db0f48f6449
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace kargo-demo does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: kargo-demo
+      role: single-namespace
+      uid: 0f929798-ed5f-4d46-aa95-40e951177d57
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-b8cd3064
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977959183020"
+    uid: bd6496ee-f2b7-4738-908b-0077b7876f17
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace test-ns-2 does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: test-ns-2
+      role: single-namespace
+      uid: abedf693-32f2-41dc-9593-93ee54e653af
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-bdae9c34
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977673327007"
+    uid: 87331108-a979-4ab5-900f-8ac7672d5169
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace overview-ns does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: overview-ns
+      role: single-namespace
+      uid: 0a065e51-5060-4271-a9ad-112158e2ce1c
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-c58a5c72
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977711839001"
+    uid: acd34db9-2cf6-4e80-a8d3-8ec494b0657d
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace pattern-analysis-ns does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: pattern-analysis-ns
+      role: single-namespace
+      uid: d1b0e3ce-0942-45ce-be0c-260007ced450
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-cb5c313b
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977918239004"
+    uid: 901103a7-2e04-4528-b6b5-6d80e2e4204b
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace test-ns does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: test-ns
+      role: single-namespace
+      uid: aa962c49-8da4-45d4-b428-7f30914ba83c
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-cbf23cf9
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977999327012"
+    uid: 6e835e08-80d0-4c16-8325-040bb7a91521
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace test-redirect-ns does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: test-redirect-ns
+      role: single-namespace
+      uid: 89dae0ce-ab78-4f79-b415-029c660aa689
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:58Z"
+    generation: 1
+    name: limit-range-predictable-demands-d6226a66
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380978122623012"
+    uid: aa378ef4-e229-40ca-8844-a76d700eb5f0
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace wordpress-startup does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: wordpress-startup
+      role: single-namespace
+      uid: 1ebb0dc6-ce26-4ae3-b562-4ec6c3b2dd07
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-d6c6d684
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976751071010"
+    uid: 33bca54a-975c-48d7-90ac-13ccd9755f7d
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace cliente2 does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: cliente2
+      role: single-namespace
+      uid: a85dd8ae-31b8-4671-8544-b047ace999fe
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:58Z"
+    generation: 1
+    name: limit-range-predictable-demands-d71f4ddd
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380978082783008"
+    uid: aef07e0b-7bfc-4435-bf94-facc139c9e30
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace trivy-system does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: trivy-system
+      role: single-namespace
+      uid: 47032560-dc82-4cb9-b44a-feceb1d35e77
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-db77ecb5
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977261727012"
+    uid: ee5fa0e1-26bd-4156-af61-c19b83183b8a
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace infrastruttura does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: infrastruttura
+      role: single-namespace
+      uid: 0e412dc7-2469-4325-9f8d-816d0c480b5e
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-dc4f28f9
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976987231017"
+    uid: 98c00252-4251-4b2c-82ae-aeb59a20db22
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace fireworksapp-system does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: fireworksapp-system
+      role: single-namespace
+      uid: 61116e4c-216e-4762-8c7b-ec37f908957e
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:56Z"
+    generation: 1
+    name: limit-range-predictable-demands-e4344d8b
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380976939711003"
+    uid: 81b5f589-5457-4db2-93ee-382975b5c8eb
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace demo-system does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: demo-system
+      role: single-namespace
+      uid: 226490b0-7cba-4cba-829d-2f79219e5df0
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-edf57747
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977543775020"
+    uid: c6d59b75-4b4a-4374-a9b8-8e085d9ab76d
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace krateo-podspanelobject-ns does not have common resource limits
+      defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: krateo-podspanelobject-ns
+      role: single-namespace
+      uid: 2a164bc4-4981-4bda-82f5-7487ea253e60
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T12:02:57Z"
+    generation: 1
+    name: limit-range-predictable-demands-fc7bce7d
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763380977308079015"
+    uid: f56e31ee-ac2e-43c1-be02-221766aae689
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Namespaces that lack of explicit resource limits. Setting
+      resource limits for such namespaces is crucial to prevent resource contention,
+      ensure fair resource allocation, and maintain cluster stability. This pattern
+      helps in identifying namespaces that could benefit from defined resource limits
+      to enhance overall cluster performance and reliability.
+    message: Namespace javaproject does not have common resource limits defined.
+    name: limit-range-predictable-demands
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: javaproject
+      role: single-namespace
+      uid: db3c1575-3d4a-4098-9c8e-988c9cf46c51
+    scores: []
+    severity: INFO
+    type: FOUNDATIONAL
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T13:10:39Z"
+    generation: 1
+    name: table-not-referenced-0814a2ad
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763385039871327020"
+    uid: 819e4d66-e448-4965-bb8a-efc39491c5be
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Tables in Krateo that are not referenced by any Panel.
+      Ensuring that all Tables are referenced by Panels is important for effective
+      data visualization and monitoring. This pattern helps in identifying orphaned
+      Tables that may need to be reviewed or removed to maintain a clean and efficient
+      monitoring setup.
+    message: Table platformhealth-table is not referenced by any Panel.
+    name: table-not-referenced
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: platformhealth-table
+      namespace: krateo-system
+      role: krateo-table
+      uid: c9703f8a-46a6-4cd5-a425-3c014d62fbad
+    scores: []
+    severity: INFO
+    type: CUSTOM
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T13:10:39Z"
+    generation: 1
+    name: table-not-referenced-1d0effe8
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763385039977343020"
+    uid: 3750e139-5ae6-4a0b-95c5-3fea13203917
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Tables in Krateo that are not referenced by any Panel.
+      Ensuring that all Tables are referenced by Panels is important for effective
+      data visualization and monitoring. This pattern helps in identifying orphaned
+      Tables that may need to be reviewed or removed to maintain a clean and efficient
+      monitoring setup.
+    message: Table multiple-license-table is not referenced by any Panel.
+    name: table-not-referenced
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: multiple-license-table
+      namespace: platform-admins
+      role: krateo-table
+      uid: df986e2f-76be-4f03-9039-173fd35d6438
+    scores: []
+    severity: INFO
+    type: CUSTOM
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T13:10:39Z"
+    generation: 1
+    name: table-not-referenced-3c6001fd
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763385039717663003"
+    uid: f7e50316-83f5-4405-b37e-1031d4719fea
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Tables in Krateo that are not referenced by any Panel.
+      Ensuring that all Tables are referenced by Panels is important for effective
+      data visualization and monitoring. This pattern helps in identifying orphaned
+      Tables that may need to be reviewed or removed to maintain a clean and efficient
+      monitoring setup.
+    message: Table admin-page-finops-panel-column-row-1-notebooks-table is not referenced
+      by any Panel.
+    name: table-not-referenced
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: admin-page-finops-panel-column-row-1-notebooks-table
+      namespace: krateo-system
+      role: krateo-table
+      uid: 0fefad91-f68f-4c9f-866f-ea0e100d17fb
+    scores: []
+    severity: INFO
+    type: CUSTOM
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T13:10:39Z"
+    generation: 1
+    name: table-not-referenced-4d0915bb
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763385039812159012"
+    uid: 31419399-b719-4287-a8e2-020ae8f49eb1
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Tables in Krateo that are not referenced by any Panel.
+      Ensuring that all Tables are referenced by Panels is important for effective
+      data visualization and monitoring. This pattern helps in identifying orphaned
+      Tables that may need to be reviewed or removed to maintain a clean and efficient
+      monitoring setup.
+    message: Table dashboard-compositions-panel-row-table is not referenced by any
+      Panel.
+    name: table-not-referenced
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: dashboard-compositions-panel-row-table
+      namespace: krateo-system
+      role: krateo-table
+      uid: 19808abd-8fa0-4a22-98fa-18845f633b3f
+    scores: []
+    severity: INFO
+    type: CUSTOM
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T13:10:39Z"
+    generation: 1
+    name: table-not-referenced-999918f1
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763385039766319003"
+    uid: e9a5a496-34b7-40d7-9163-d736e38ea01d
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Tables in Krateo that are not referenced by any Panel.
+      Ensuring that all Tables are referenced by Panels is important for effective
+      data visualization and monitoring. This pattern helps in identifying orphaned
+      Tables that may need to be reviewed or removed to maintain a clean and efficient
+      monitoring setup.
+    message: Table dashboard-blueprints-panel-row-table is not referenced by any Panel.
+    name: table-not-referenced
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: dashboard-blueprints-panel-row-table
+      namespace: krateo-system
+      role: krateo-table
+      uid: 009c47ad-6eb8-4a0d-90f2-7aa676578de6
+    scores: []
+    severity: INFO
+    type: CUSTOM
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T13:10:39Z"
+    generation: 1
+    name: table-not-referenced-b89046ac
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763385039923951005"
+    uid: ec70f0dc-b941-4a4f-9b50-597d30807ef9
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Tables in Krateo that are not referenced by any Panel.
+      Ensuring that all Tables are referenced by Panels is important for effective
+      data visualization and monitoring. This pattern helps in identifying orphaned
+      Tables that may need to be reviewed or removed to maintain a clean and efficient
+      monitoring setup.
+    message: Table k8s-resources-table is not referenced by any Panel.
+    name: table-not-referenced
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: k8s-resources-table
+      namespace: platform-admins
+      role: krateo-table
+      uid: aa8f40f3-c456-4650-aff8-f0d194182375
+    scores: []
+    severity: INFO
+    type: CUSTOM
+- apiVersion: kubepattern.it/v1
+  kind: K8sPattern
+  metadata:
+    creationTimestamp: "2025-11-17T13:10:40Z"
+    generation: 1
+    name: table-not-referenced-df9f2d31
+    namespace: pattern-analysis-ns
+    resourceVersion: "1763385040025855003"
+    uid: 24402334-fa67-43dc-8ea2-d2a62720d862
+  spec:
+    apiVersion: kubepattern.it/v1
+    confidence: HIGH
+    description: Identifies Tables in Krateo that are not referenced by any Panel.
+      Ensuring that all Tables are referenced by Panels is important for effective
+      data visualization and monitoring. This pattern helps in identifying orphaned
+      Tables that may need to be reviewed or removed to maintain a clean and efficient
+      monitoring setup.
+    message: Table pods-table is not referenced by any Panel.
+    name: table-not-referenced
+    referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md
+    resources:
+    - name: pods-table
+      namespace: test-ns
+      role: krateo-table
+      uid: e2c619b6-09a4-4d04-81d9-55953111447e
+    scores: []
+    severity: INFO
+    type: CUSTOM
+kind: List
+metadata:
+  resourceVersion: ""
