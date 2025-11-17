@@ -61,7 +61,7 @@
         "relationships": [
             {
                 "id": "table-to-panel-relationship",
-                "type": "ReferencesKrateo",
+                "type": "REFERENCES_KRATEO",
                 "description": "Links Table '{{krateo-table.name}}' with Panel containing the Table '{{krateo-panel-containing-table.name}}'.",
                 "weight": 1,
                 "required": true,
