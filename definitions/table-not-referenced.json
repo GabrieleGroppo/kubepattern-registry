@@ -2,18 +2,18 @@
     "version": "kubepattern.it/v1",
     "kind": "Pattern",
     "metadata": {
-        "name": "limit-range-predictable-demands",
-        "displayName": "Limit Range Predictable Demands",
-        "patternType": "FOUNDATIONAL",
+        "name": "table-not-referenced",
+        "displayName": "Table Not Referenced",
+        "patternType": "CUSTOM",
         "severity": "WARNING",
         "category": "architecture",
         "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/limit-range-pattern.md",
-        "description": "Identifies Namespaces that lack of explicit resource limits. Setting resource limits for such namespaces is crucial to prevent resource contention, ensure fair resource allocation, and maintain cluster stability. This pattern helps in identifying namespaces that could benefit from defined resource limits to enhance overall cluster performance and reliability."
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/table-not-referenced-pattern.json",
+        "description": "Identifies Tables in Krateo that are not referenced by any Panel. Ensuring that all Tables are referenced by Panels is important for effective data visualization and monitoring. This pattern helps in identifying orphaned Tables that may need to be reviewed or removed to maintain a clean and efficient monitoring setup."
     },
     "spec": {
-        "message": "Namespace {{single-namespace.name}} does not have common resource limits defined.",
-        "topology": "CONNECTED",
+        "message": "Table {{krateo-table.name}} is not referenced by any Panel.",
+        "topology": "SINGLE",
         "resources": [
             {
                 "resource": "Table",
