@@ -1,0 +1,97 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "table-not-referenced",
+        "displayName": "Table Not Referenced",
+        "patternType": "CUSTOM",
+        "severity": "WARNING",
+        "category": "architecture",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/table-not-referenced-pattern.json",
+        "description": "Identifies Tables in Krateo that are not referenced by any Panel. Ensuring that all Tables are referenced by Panels is important for effective data visualization and monitoring. This pattern helps in identifying orphaned Tables that may need to be reviewed or removed to maintain a clean and efficient monitoring setup."
+    },
+    "spec": {
+        "message": "Table {{krateo-table.name}} is not referenced by any widget.",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Table",
+                "id": "krateo-table",
+                "leader": true
+            },
+            {
+                "resource": "Panel",
+                "id": "krateo-panel-containing-table"
+            },
+            {
+                "resource": "Row",
+                "id": "krateo-row-containing-table"
+            },
+            {
+                "resource": "Column",
+                "id": "krateo-column-containing-table"
+            },
+            {
+                "resource": "Page",
+                "id": "krateo-page-containing-table"
+            }
+        ],
+        "actors": [
+            "krateo-table"
+        ],
+        "relationships": [
+            {
+                "id": "table-to-panel-relationship",
+                "type": "REFERENCES_KRATEO",
+                "description": "Links Table '{{krateo-table.name}}' with Panel containing the Table '{{krateo-panel-containing-table.name}}'.",
+                "weight": 1,
+                "required": false,
+                "shared": false,
+                "resourceIds": [
+                    "krateo-table",
+                    "krateo-panel-containing-table"
+                ]
+            },
+            {
+                "id": "table-to-row-relationship",
+                "type": "REFERENCES_KRATEO",
+                "description": "Links Table '{{krateo-table.name}}' with Row containing the Table '{{krateo-row-containing-table.name}}'.",
+                "weight": 1,
+                "required": false,
+                "shared": false,
+                "resourceIds": [
+                    "krateo-table",
+                    "krateo-row-containing-table"
+                ]
+            },
+            {
+                "id": "table-to-column-relationship",
+                "type": "REFERENCES_KRATEO",
+                "description": "Links Table '{{krateo-table.name}}' with Column containing the Table '{{krateo-column-containing-table.name}}'.",
+                "weight": 1,
+                "required": false,
+                "shared": false,
+                "resourceIds": [
+                    "krateo-table",
+                    "krateo-column-containing-table"
+                ]
+            },
+            {
+                "id": "table-to-page-relationship",
+                "type": "REFERENCES_KRATEO",
+                "description": "Links Table '{{krateo-table.name}}' with Page containing the Table '{{krateo-page-containing-table.name}}'.",
+                "weight": 1,
+                "required": false,
+                "shared": false,
+                "resourceIds": [
+                    "krateo-table",
+                    "krateo-page-containing-table"
+                ]
+            }
+        ],
+        "minRelationshipPoints": 1
+    }
+}
+
+
