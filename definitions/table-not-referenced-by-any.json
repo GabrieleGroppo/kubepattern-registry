@@ -45,7 +45,7 @@
             {
                 "resource": "Row",
                 "id": "krateo-row-containing-table",
-                    "filters":{
+                "filters":{
 					"matchAll":[
 						{
 							"key": ".metadata.namespace",
