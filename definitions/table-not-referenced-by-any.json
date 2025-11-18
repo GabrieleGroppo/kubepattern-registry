@@ -12,13 +12,25 @@
         "description": "Identifies Tables in Krateo that are not referenced by any Panel and Row."
     },
     "spec": {
-        "message": "Table {{krateo-table.name}} is not referenced by any widget.",
+        "message": "Table {{krateo-table.name}} is not referenced by any widget (Row, Panel).",
         "topology": "SINGLE",
         "resources": [
             {
                 "resource": "Table",
                 "id": "krateo-table",
                 "leader": true
+                "filters":{
+					"matchAll":[
+						{
+							"key": ".metadata.name",
+	                        "operator": "EQUALS",
+	                        "values": [
+								"cliente1",
+								"default",								
+	                        ]
+	                  	}
+                  	]
+                }
             },
             {
                 "resource": "Panel",
@@ -28,14 +40,6 @@
                 "resource": "Row",
                 "id": "krateo-row-containing-table"
             },
-            {
-                "resource": "Column",
-                "id": "krateo-column-containing-table"
-            },
-            {
-                "resource": "Page",
-                "id": "krateo-page-containing-table"
-            }
         ],
         "actors": [
             "krateo-table"
