@@ -22,7 +22,7 @@
                 "filters":{
 					"matchAll":[
 						{
-							"key": ".metadata.name",
+							"key": ".metadata.namespace",
 	                        "operator": "EQUALS",
 	                        "values": [
 								"default"							
@@ -37,7 +37,7 @@
                                 "filters":{
 					"matchAll":[
 						{
-							"key": ".metadata.name",
+							"key": ".metadata.namespace",
 	                        "operator": "EQUALS",
 	                        "values": [
 								"default"							
@@ -49,10 +49,10 @@
             {
                 "resource": "Row",
                 "id": "krateo-row-containing-table",
-                                "filters":{
+                    "filters":{
 					"matchAll":[
 						{
-							"key": ".metadata.name",
+							"key": ".metadata.namespace",
 	                        "operator": "EQUALS",
 	                        "values": [
 								"default"							
