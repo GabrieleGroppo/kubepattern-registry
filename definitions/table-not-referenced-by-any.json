@@ -9,7 +9,7 @@
         "category": "architecture",
         "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
         "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/table-not-referenced-pattern.json",
-        "description": "Identifies Tables in Krateo that are not referenced by any Panel. Ensuring that all Tables are referenced by Panels is important for effective data visualization and monitoring. This pattern helps in identifying orphaned Tables that may need to be reviewed or removed to maintain a clean and efficient monitoring setup."
+        "description": "Identifies Tables in Krateo that are not referenced by any Panel and Row."
     },
     "spec": {
         "message": "Table {{krateo-table.name}} is not referenced by any widget.",
