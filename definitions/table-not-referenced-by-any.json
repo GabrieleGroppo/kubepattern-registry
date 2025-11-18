@@ -34,10 +34,32 @@
             {
                 "resource": "Panel",
                 "id": "krateo-panel-containing-table"
+                                "filters":{
+					"matchAll":[
+						{
+							"key": ".metadata.name",
+	                        "operator": "EQUALS",
+	                        "values": [
+								"default"							
+	                        ]
+	                  	}
+                  	]
+                }
             },
             {
                 "resource": "Row",
                 "id": "krateo-row-containing-table"
+                                "filters":{
+					"matchAll":[
+						{
+							"key": ".metadata.name",
+	                        "operator": "EQUALS",
+	                        "values": [
+								"default"							
+	                        ]
+	                  	}
+                  	]
+                }
             }
         ],
         "actors": [
