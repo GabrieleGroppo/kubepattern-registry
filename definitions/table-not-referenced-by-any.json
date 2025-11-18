@@ -33,7 +33,7 @@
             },
             {
                 "resource": "Panel",
-                "id": "krateo-panel-containing-table"
+                "id": "krateo-panel-containing-table",
                                 "filters":{
 					"matchAll":[
 						{
@@ -48,7 +48,7 @@
             },
             {
                 "resource": "Row",
-                "id": "krateo-row-containing-table"
+                "id": "krateo-row-containing-table",
                                 "filters":{
 					"matchAll":[
 						{
