@@ -24,9 +24,7 @@
 						{
 							"key": ".metadata.name",
 	                        "operator": "EQUALS",
-	                        "values": [
-								"default"							
-	                        ]
+	                        "values": ["default"]
 	                  	}
                   	]
                 }
@@ -34,14 +32,12 @@
             {
                 "resource": "Panel",
                 "id": "krateo-panel-containing-table",
-                                "filters":{
+				"filters":{
 					"matchAll":[
 						{
 							"key": ".metadata.name",
 	                        "operator": "EQUALS",
-	                        "values": [
-								"default"							
-	                        ]
+	                        "values": ["default"]
 	                  	}
                   	]
                 }
@@ -49,7 +45,7 @@
             {
                 "resource": "Row",
                 "id": "krateo-row-containing-table",
-                                "filters":{
+                "filters":{
 					"matchAll":[
 						{
 							"key": ".metadata.name",
@@ -94,5 +90,6 @@
         "minRelationshipPoints": 1
     }
 }
+
 
 
