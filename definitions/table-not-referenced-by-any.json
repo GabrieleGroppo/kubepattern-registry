@@ -18,7 +18,7 @@
             {
                 "resource": "Table",
                 "id": "krateo-table",
-                "leader": true
+                "leader": true,
                 "filters":{
 					"matchAll":[
 						{
@@ -26,7 +26,7 @@
 	                        "operator": "EQUALS",
 	                        "values": [
 								"cliente1",
-								"default",								
+								"default"							
 	                        ]
 	                  	}
                   	]
@@ -39,7 +39,7 @@
             {
                 "resource": "Row",
                 "id": "krateo-row-containing-table"
-            },
+            }
         ],
         "actors": [
             "krateo-table"
