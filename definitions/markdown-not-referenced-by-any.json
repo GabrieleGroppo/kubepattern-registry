@@ -12,7 +12,7 @@
         "description": "Identifies Markdowns in Krateo that are not referenced by any Panel and Row."
     },
     "spec": {
-        "message": "Table {{krateo-table.name}} is not referenced by any widget (Row, Panel).",
+        "message": "Markdown {{krateo-markdown.name}} is not referenced by any widget (Panel, Row, Column, Page).",
         "topology": "SINGLE",
         "resources": [
             {
