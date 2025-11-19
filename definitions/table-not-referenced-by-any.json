@@ -18,7 +18,23 @@
             {
                 "resource": "Table",
                 "id": "krateo-table",
-                "leader": true
+                "leader": true,
+                "filters": {
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "krateo-system",
+                                "kube-system",
+                                "gmp-system",
+                                "cnrm-system",
+                                "kargo",
+                                "cert-manager"
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "resource": "Panel",

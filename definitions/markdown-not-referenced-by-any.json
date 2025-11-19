@@ -28,11 +28,12 @@
                                 "krateo-system",
                                 "kube-system",
                                 "gmp-system",
-                                "cnrm-system"
+                                "cnrm-system",
+                                "kargo",
+                                "cert-manager"
                             ]
                         }
-                    ],
-                    "matchAny": []
+                    ]
                 }
 
             },
