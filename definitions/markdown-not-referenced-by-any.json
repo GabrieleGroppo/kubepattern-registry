@@ -30,7 +30,8 @@
                                 "gmp-system",
                                 "cnrm-system",
                                 "kargo",
-                                "cert-manager"
+                                "cert-manager",
+                                "krateo-podspanelobject-ns"
                             ]
                         }
                     ]
