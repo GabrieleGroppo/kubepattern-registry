@@ -22,11 +22,13 @@
                 "filters": {
                     "matchNone": [
                         {
-                            "key": ".metadata.name",
+                            "key": ".metadata.namespace",
                             "operator": "EQUALS",
                             "values": [
+                                "krateo-system",
                                 "kube-system",
-                                "krateo-system"
+                                "gmp-system",
+                                "cnrm-system"
                             ]
                         }
                     ],
