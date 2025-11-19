@@ -2,8 +2,8 @@
     "version": "kubepattern.it/v1",
     "kind": "Pattern",
     "metadata": {
-        "name": "table-not-referenced",
-        "displayName": "Table Not Referenced",
+        "name": "markdown-not-referenced",
+        "displayName": "Markdown Not Referenced",
         "patternType": "CUSTOM",
         "severity": "WARNING",
         "category": "architecture",
