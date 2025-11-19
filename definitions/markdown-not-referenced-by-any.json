@@ -18,7 +18,21 @@
             {
                 "resource": "Markdown",
                 "id": "krateo-markdown",
-                "leader": true
+                "leader": true,
+                "filters": {
+                    "matchNone": [
+                        {
+                            "key": ".metadata.name",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "krateo-system"
+                            ]
+                        }
+                    ],
+                    "matchAny": []
+                }
+
             },
             {
                 "resource": "Panel",
