@@ -31,7 +31,8 @@
                                 "cnrm-system",
                                 "kargo",
                                 "cert-manager",
-                                "krateo-podspanelobject-ns"
+                                "krateo-podspanelobject-ns",
+                                "gke-managed-cim"
                             ]
                         }
                     ]

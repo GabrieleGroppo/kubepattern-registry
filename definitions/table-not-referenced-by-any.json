@@ -12,7 +12,7 @@
         "description": "Identifies Tables in Krateo that are not referenced by any Panel, Row, Column, or Page. Unreferenced Tables may indicate unused or orphaned resources that could be cleaned up to optimize resource management and maintain a tidy environment."
     },
     "spec": {
-        "message": "Table {{krateo-table.name}} is not referenced by any widget (Panel, Row, Column, Page).",
+        "message": "Table {{krateo-table.name}} in namespace {{krateo-table.namespace}} is not referenced by any widget (Panel, Row, Column, Page).",
         "topology": "SINGLE",
         "resources": [
             {
@@ -31,7 +31,8 @@
                                 "cnrm-system",
                                 "kargo",
                                 "cert-manager",
-                                "krateo-podspanelobject-ns"
+                                "krateo-podspanelobject-ns",
+                                "gke-managed-cim"
                             ]
                         }
                     ]
