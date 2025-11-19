@@ -7,7 +7,7 @@
         "patternType": "CUSTOM",
         "severity": "WARNING",
         "category": "architecture",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/resource-not-referenced.md",
         "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/table-not-referenced-pattern.json",
         "description": "Identifies Tables in Krateo that are not referenced by any Panel and Row."
     },
