@@ -9,10 +9,10 @@
         "category": "architecture",
         "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/resource-not-referenced.md",
         "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/table-not-referenced-pattern.json",
-        "description": "Identifies Tables in Krateo that are not referenced by any Panel and Row."
+        "description": "Identifies Tables in Krateo that are not referenced by any Panel, Row, Column, or Page. Unreferenced Tables may indicate unused or orphaned resources that could be cleaned up to optimize resource management and maintain a tidy environment."
     },
     "spec": {
-        "message": "Table {{krateo-table.name}} is not referenced by any widget (Row, Panel).",
+        "message": "Table {{krateo-table.name}} is not referenced by any widget (Panel, Row, Column, Page).",
         "topology": "SINGLE",
         "resources": [
             {
