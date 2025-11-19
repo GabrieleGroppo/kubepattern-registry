@@ -56,6 +56,21 @@
 	                  	}
                   	]
                 }
+            },
+            {
+                "resource": "Column",
+                "id": "krateo-column-containing-table",
+                "filters":{
+					"matchAll":[
+						{
+							"key": ".metadata.namespace",
+	                        "operator": "EQUALS",
+	                        "values": [
+								"default"							
+	                        ]
+	                  	}
+                  	]
+                }
             }
         ],
         "actors": [
@@ -84,6 +99,18 @@
                 "resourceIds": [
                     "krateo-table",
                     "krateo-row-containing-table"
+                ]
+            },
+            {
+                "id": "table-to-column-relationship",
+                "type": "REFERENCES_KRATEO",
+                "description": "Links Table '{{krateo-table.name}}' with Column containing the Table '{{krateo-column-containing-table.name}}'.",
+                "weight": 1,
+                "required": false,
+                "shared": false,
+                "resourceIds": [
+                    "krateo-table",
+                    "krateo-column-containing-table"
                 ]
             }
         ],
