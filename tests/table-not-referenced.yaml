@@ -1,0 +1,87 @@
+# TABLE WITH REFERENCES TO BE TESTED
+apiVersion: widgets.templates.krateo.io/v1beta1
+kind: Table
+metadata:
+  name: referenced-table
+  namespace: default
+spec:
+  widgetData:
+    allowedResources: []
+    pageSize: 5
+    columns:
+      - title: Field
+        valueKey: field
+    data: []
+
+---
+apiVersion: widgets.templates.krateo.io/v1beta1
+kind: Row
+metadata:
+  name: my-row-with-table
+  namespace: default
+spec:
+  widgetData:
+    allowedResources:
+      - tables
+    items:
+      - resourceRefId: referenced-table
+        size: 24
+  resourcesRefs:
+    items:
+      - id: referenced-table
+        apiVersion: widgets.templates.krateo.io/v1beta1
+        name: referenced-table
+        namespace: default
+        resource: tables
+        verb: GET
+---
+apiVersion: widgets.templates.krateo.io/v1beta1
+kind: Column
+metadata:
+  name: my-column-with-table
+  namespace: default
+spec:
+  widgetData:
+    allowedResources:
+      - tables
+    items:
+      - resourceRefId: referenced-table-2
+  resourcesRefs:
+    items:
+      - id: referenced-table-2
+        apiVersion: widgets.templates.krateo.io/v1beta1
+        name: referenced-table-2
+        namespace: default
+        resource: tables
+        verb: GET
+---
+apiVersion: widgets.templates.krateo.io/v1beta1
+kind: Table
+metadata:
+  name: referenced-table-2
+  namespace: default
+spec:
+  widgetData:
+    allowedResources: []
+    pageSize: 5
+    columns:
+      - title: Field
+        valueKey: field
+    data: []
+---
+# TABLE WITHOUT REFERENCES TO BE TESTED
+apiVersion: widgets.templates.krateo.io/v1beta1
+kind: Table
+metadata:
+  name: table-without-references
+  namespace: default
+spec:
+  widgetData:
+    allowedResources: []
+    columns:
+    - title: Example
+      valueKey: example
+    - title: Test
+      valueKey: test
+    data: []
+    pageSize: 5
