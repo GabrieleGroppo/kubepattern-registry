@@ -18,59 +18,23 @@
             {
                 "resource": "Table",
                 "id": "krateo-table",
-                "leader": true,
-                "filters":{
-					"matchAll":[
-						{
-							"key": ".metadata.namespace",
-	                        "operator": "EQUALS",
-	                        "values": ["default"]
-	                  	}
-                  	]
-                }
+                "leader": true
             },
             {
                 "resource": "Panel",
-                "id": "krateo-panel-containing-table",
-				"filters":{
-					"matchAll":[
-						{
-							"key": ".metadata.namespace",
-	                        "operator": "EQUALS",
-	                        "values": ["default"]
-	                  	}
-                  	]
-                }
+                "id": "krateo-panel-containing-table"
             },
             {
                 "resource": "Row",
-                "id": "krateo-row-containing-table",
-                "filters":{
-					"matchAll":[
-						{
-							"key": ".metadata.namespace",
-	                        "operator": "EQUALS",
-	                        "values": [
-								"default"							
-	                        ]
-	                  	}
-                  	]
-                }
+                "id": "krateo-row-containing-table"
             },
             {
                 "resource": "Column",
-                "id": "krateo-column-containing-table",
-                "filters":{
-					"matchAll":[
-						{
-							"key": ".metadata.namespace",
-	                        "operator": "EQUALS",
-	                        "values": [
-								"default"							
-	                        ]
-	                  	}
-                  	]
-                }
+                "id": "krateo-column-containing-table"
+            },
+            {
+                "resource": "Page",
+                "id": "krateo-page-containing-table"
             }
         ],
         "actors": [
@@ -111,6 +75,18 @@
                 "resourceIds": [
                     "krateo-table",
                     "krateo-column-containing-table"
+                ]
+            },
+            {
+                "id": "table-to-page-relationship",
+                "type": "REFERENCES_KRATEO",
+                "description": "Links Table '{{krateo-table.name}}' with Page containing the Table '{{krateo-page-containing-table.name}}'.",
+                "weight": 1,
+                "required": false,
+                "shared": false,
+                "resourceIds": [
+                    "krateo-table",
+                    "krateo-page-containing-table"
                 ]
             }
         ],
