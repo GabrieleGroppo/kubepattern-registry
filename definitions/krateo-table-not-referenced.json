@@ -2,7 +2,7 @@
     "version": "kubepattern.it/v1",
     "kind": "Pattern",
     "metadata": {
-        "name": "table-not-referenced",
+        "name": "krateo-table-not-referenced",
         "displayName": "Table Not Referenced",
         "patternType": "CUSTOM",
         "severity": "WARNING",

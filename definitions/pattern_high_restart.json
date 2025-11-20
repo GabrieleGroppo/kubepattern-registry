@@ -1,0 +1,49 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "high-restart-count-resource-suggestion",
+        "displayName": "High Restart Count Resource Suggestion",
+        "patternType": "BEHAVIORAL",
+        "severity": "WARNING",
+        "category": "Performance",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/high-restart-count-resource-suggestion.json",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
+        "description": "Identifies pods with high restart counts that may indicate resource constraints (OOM, CPU throttling). Pods that restart frequently often need increased memory or CPU limits to maintain stability."
+    },
+    "spec": {
+        "message": "Pod {{unstable-pod.name}} in namespace {{unstable-pod.namespace}} has a high restart count.",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Pod",
+                "id": "unstable-pod",
+                "leader": true,
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".status.containerStatuses[*].restartCount",
+                            "operator": "GREATER_THAN",
+                            "values": ["3"]
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "actors": [
+            "unstable-pod"
+        ]
+    }
+}

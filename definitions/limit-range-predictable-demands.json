@@ -1,0 +1,78 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "limit-range-predictable-demands",
+        "displayName": "Limit Range Predictable Demands",
+        "patternType": "FOUNDATIONAL",
+        "severity": "WARNING",
+        "category": "architecture",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/limit-range-predictable-demands.md",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/limit-range-predictable-demands.json",
+        "description": "Identifies Namespaces that lack of explicit resource limits. Setting resource limits for such namespaces is crucial to prevent resource contention, ensure fair resource allocation, and maintain cluster stability. This pattern helps in identifying namespaces that could benefit from defined resource limits to enhance overall cluster performance and reliability."
+    },
+    "spec": {
+        "message": "Namespace {{single-namespace.name}} does not have common resource limits defined.",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Namespace",
+                "id": "single-namespace",
+                "leader": true,
+                "filters": {
+                    "matchNone": [
+                        {
+                            "key": ".metadata.name",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ],
+                    "matchAny": []
+                }
+            },
+            {
+                "resource": "LimitRange",
+                "id": "limit-range-in-namespace",
+                "filters": {
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ],
+                    "matchAny": [
+                        
+                    ]
+                }
+            }
+        ],
+        "actors": [
+            "single-namespace"
+        ],
+        "relationships": [
+            {
+                "id": "limit-range-in-namespace",
+                "type": "IS_NAMESPACE_OF",
+                "description": "Links Namespace '{{single-namespace.name}}' with LimitRange in the same namespace.",
+                "weight": 1,
+                "required": true,
+                "shared": false,
+                "resourceIds": [
+                    "single-namespace",
+                    "limit-range-in-namespace"
+                ]
+            }
+        ]
+    }
+}
