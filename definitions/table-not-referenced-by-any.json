@@ -12,13 +12,31 @@
         "description": "Identifies Tables in Krateo that are not referenced by any Panel, Row, Column, or Page. Unreferenced Tables may indicate unused or orphaned resources that could be cleaned up to optimize resource management and maintain a tidy environment."
     },
     "spec": {
-        "message": "Table {{krateo-table.name}} is not referenced by any widget (Panel, Row, Column, Page).",
+        "message": "Table {{krateo-table.name}} in namespace {{krateo-table.namespace}} is not referenced by any widget (Panel, Row, Column, Page).",
         "topology": "SINGLE",
         "resources": [
             {
                 "resource": "Table",
                 "id": "krateo-table",
-                "leader": true
+                "leader": true,
+                "filters": {
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "krateo-system",
+                                "kube-system",
+                                "gmp-system",
+                                "cnrm-system",
+                                "kargo",
+                                "cert-manager",
+                                "krateo-podspanelobject-ns",
+                                "gke-managed-cim"
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "resource": "Panel",
@@ -46,7 +64,7 @@
                 "type": "REFERENCES_KRATEO",
                 "description": "Links Table '{{krateo-table.name}}' with Panel containing the Table '{{krateo-panel-containing-table.name}}'.",
                 "weight": 1,
-                "required": false,
+                "required": true,
                 "shared": false,
                 "resourceIds": [
                     "krateo-table",
@@ -58,7 +76,7 @@
                 "type": "REFERENCES_KRATEO",
                 "description": "Links Table '{{krateo-table.name}}' with Row containing the Table '{{krateo-row-containing-table.name}}'.",
                 "weight": 1,
-                "required": false,
+                "required": true,
                 "shared": false,
                 "resourceIds": [
                     "krateo-table",
@@ -70,7 +88,7 @@
                 "type": "REFERENCES_KRATEO",
                 "description": "Links Table '{{krateo-table.name}}' with Column containing the Table '{{krateo-column-containing-table.name}}'.",
                 "weight": 1,
-                "required": false,
+                "required": true,
                 "shared": false,
                 "resourceIds": [
                     "krateo-table",
@@ -82,7 +100,7 @@
                 "type": "REFERENCES_KRATEO",
                 "description": "Links Table '{{krateo-table.name}}' with Page containing the Table '{{krateo-page-containing-table.name}}'.",
                 "weight": 1,
-                "required": false,
+                "required": true,
                 "shared": false,
                 "resourceIds": [
                     "krateo-table",
