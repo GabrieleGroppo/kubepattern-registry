@@ -53,39 +53,12 @@
             {
                 "resource": "Page",
                 "id": "krateo-page-containing-table"
-            },
-            {
-                "resource": "Namespace",
-                "id": "default-namespace",
-                "filters": {
-                    "matchAll": [
-                        {
-                            "key": ".metadata.name",
-                            "operator": "EQUALS",
-                            "values": [
-                                "default"
-                            ]
-                        }
-                    ]
-                }
             }
         ],
         "actors": [
             "krateo-table"
         ],
         "relationships": [
-            {
-                "id": "default-namespace-relationship",
-                "type": "IS_NAMESPACE_OF",
-                "description": "Links Table '{{krateo-table.name}}' with Namespace '{{default-namespace.name}}'.",
-                "weight": 1,
-                "required": true,
-                "shared": false,
-                "resourceIds": [
-                    "krateo-table",
-                    "default-namespace"
-                ]
-            },
             {
                 "id": "table-to-panel-relationship",
                 "type": "REFERENCES_KRATEO",
