@@ -80,7 +80,7 @@
                 "description": "Links Table '{{krateo-table.name}}' with Namespace '{{default-namespace.name}}'.",
                 "weight": 1,
                 "required": true,
-                "shared": true,
+                "shared": false,
                 "resourceIds": [
                     "krateo-table",
                     "default-namespace"
