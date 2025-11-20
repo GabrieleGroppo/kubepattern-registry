@@ -53,12 +53,28 @@
             {
                 "resource": "Page",
                 "id": "krateo-page-containing-table"
+            },
+            {
+                "resource": "Namespace",
+                "id": "default-namespace"
             }
         ],
         "actors": [
             "krateo-table"
         ],
         "relationships": [
+            {
+                "id": "default-namespace-relationship",
+                "type": "IS_NAMESPACE_OF",
+                "description": "Links Table '{{krateo-table.name}}' with Namespace '{{default-namespace.name}}'.",
+                "weight": 1,
+                "required": true,
+                "shared": true,
+                "resourceIds": [
+                    "krateo-table",
+                    "default-namespace"
+                ]
+            },
             {
                 "id": "table-to-panel-relationship",
                 "type": "REFERENCES_KRATEO",
