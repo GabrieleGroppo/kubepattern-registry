@@ -64,7 +64,7 @@
                 "type": "REFERENCES_KRATEO",
                 "description": "Links Table '{{krateo-table.name}}' with Panel containing the Table '{{krateo-panel-containing-table.name}}'.",
                 "weight": 1,
-                "required": false,
+                "required": true,
                 "shared": false,
                 "resourceIds": [
                     "krateo-table",
@@ -76,7 +76,7 @@
                 "type": "REFERENCES_KRATEO",
                 "description": "Links Table '{{krateo-table.name}}' with Row containing the Table '{{krateo-row-containing-table.name}}'.",
                 "weight": 1,
-                "required": false,
+                "required": true,
                 "shared": false,
                 "resourceIds": [
                     "krateo-table",
@@ -88,7 +88,7 @@
                 "type": "REFERENCES_KRATEO",
                 "description": "Links Table '{{krateo-table.name}}' with Column containing the Table '{{krateo-column-containing-table.name}}'.",
                 "weight": 1,
-                "required": false,
+                "required": true,
                 "shared": false,
                 "resourceIds": [
                     "krateo-table",
@@ -100,7 +100,7 @@
                 "type": "REFERENCES_KRATEO",
                 "description": "Links Table '{{krateo-table.name}}' with Page containing the Table '{{krateo-page-containing-table.name}}'.",
                 "weight": 1,
-                "required": false,
+                "required": true,
                 "shared": false,
                 "resourceIds": [
                     "krateo-table",
