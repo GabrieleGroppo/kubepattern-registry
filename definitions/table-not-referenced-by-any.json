@@ -56,7 +56,18 @@
             },
             {
                 "resource": "Namespace",
-                "id": "default-namespace"
+                "id": "default-namespace",
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".metadata.name",
+                            "operator": "EQUALS",
+                            "values": [
+                                "default"
+                            ]
+                        }
+                    ]
+                }
             }
         ],
         "actors": [
