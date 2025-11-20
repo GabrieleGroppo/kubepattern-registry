@@ -2,17 +2,17 @@
     "version": "kubepattern.it/v1",
     "kind": "Pattern",
     "metadata": {
-        "name": "table-not-referenced",
-        "displayName": "Table Not Referenced",
+        "name": "table-referenced-by-any",
+        "displayName": "Table Referenced By Any",
         "patternType": "CUSTOM",
         "severity": "WARNING",
         "category": "architecture",
         "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/resource-not-referenced.md",
         "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/table-not-referenced-pattern.json",
-        "description": "Identifies Tables in Krateo that are not referenced by any Panel, Row, Column, or Page. Unreferenced Tables may indicate unused or orphaned resources that could be cleaned up to optimize resource management and maintain a tidy environment."
+        "description": "Identifies Tables in Krateo that are referenced by any Panel, Row, Column, or Page. Referenced Tables indicate active usage within the environment."
     },
     "spec": {
-        "message": "Table {{krateo-table.name}} in namespace {{krateo-table.namespace}} is not referenced by any widget (Panel, Row, Column, Page).",
+        "message": "Table {{krateo-table.name}} in namespace {{krateo-table.namespace}} is referenced by any widget (Panel, Row, Column, Page).",
         "topology": "SINGLE",
         "resources": [
             {
