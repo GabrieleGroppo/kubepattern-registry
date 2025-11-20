@@ -1,0 +1,125 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "table-referenced-by-any",
+        "displayName": "Table Referenced By Any",
+        "patternType": "CUSTOM",
+        "severity": "WARNING",
+        "category": "architecture",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/resource-not-referenced.md",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/table-not-referenced-pattern.json",
+        "description": "Identifies Tables in Krateo that are referenced by any Panel, Row, Column, or Page. Referenced Tables indicate active usage within the environment."
+    },
+    "spec": {
+                "message": "Table {{krateo-table.name}} in namespace {{krateo-table.namespace}} is referenced by any widget (Panel, Row, Column, Page).",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Table",
+                "id": "krateo-table",
+                "leader": true,
+                "filters": {
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "krateo-system",
+                                "kube-system",
+                                "gmp-system",
+                                "cnrm-system",
+                                "kargo",
+                                "cert-manager",
+                                "krateo-podspanelobject-ns",
+                                "gke-managed-cim"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "resource": "Panel",
+                "id": "krateo-panel-containing-table"
+            },
+            {
+                "resource": "Row",
+                "id": "krateo-row-containing-table"
+            },
+            {
+                "resource": "Column",
+                "id": "krateo-column-containing-table"
+            },
+            {
+                "resource": "Page",
+                "id": "krateo-page-containing-table"
+            },
+            {
+                "resource": "Namespace",
+                "id": "default-namespace",
+                "filters": {
+                    "matchAll": [
+                        {
+                            "key": ".metadata.name",
+                            "operator": "EQUALS",
+                            "values": [
+                                "default"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "actors": [
+            "krateo-table"
+        ],
+        "relationships": [
+            
+            {
+                "id": "default-namespace-relationship",
+                "type": "IS_NAMESPACE_OF",
+                "required": true,   
+                "shared": false,    
+                "weight": 1,
+                "resourceIds": ["krateo-table", "default-namespace"]
+            },
+            
+            {
+                "id": "table-to-panel-relationship",
+                "type": "REFERENCES_KRATEO",
+                "required": true,   
+                "shared": false,    
+                "weight": 1,
+                "resourceIds": ["krateo-table", "krateo-panel-containing-table"]
+            },
+            
+            {
+                "id": "table-to-row-relationship",
+                "type": "REFERENCES_KRATEO",
+                "required": true,   
+                "shared": false,    
+                "weight": 1,
+                "resourceIds": ["krateo-table", "krateo-row-containing-table"]
+            },
+            
+            {
+                "id": "table-to-column-relationship",
+                "type": "REFERENCES_KRATEO",
+                "required": true,   
+                "shared": false,    
+                "weight": 1,
+                "resourceIds": ["krateo-table", "krateo-column-containing-table"]
+            },
+            
+            {
+                "id": "table-to-page-relationship",
+                "type": "REFERENCES_KRATEO",
+                "required": true,   
+                "shared": false,    
+                "weight": 1,
+                "resourceIds": ["krateo-table", "krateo-page-containing-table"]
+            }
+        ],
+        "minRelationshipPoints": 0 
+    }
+}
