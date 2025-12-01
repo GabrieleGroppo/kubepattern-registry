@@ -2,8 +2,8 @@
     "version": "kubepattern.it/v1",
     "kind": "Pattern",
     "metadata": {
-        "name": "krateo-table-not-referenced",
-        "displayName": "Table Not Referenced",
+        "name": "krateo-page-not-referenced",
+        "displayName": "Page Not Referenced",
         "patternType": "CUSTOM",
         "severity": "WARNING",
         "category": "architecture",
