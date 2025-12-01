@@ -55,8 +55,8 @@
                 "required": true,
                 "shared": false,
                 "resourceIds": [
-                    "krateo-navmenuitem-containing-page",
-                    "krateo-page"
+                    "krateo-page",
+                    "krateo-navmenuitem-containing-page"
                 ]
             }
         ],
