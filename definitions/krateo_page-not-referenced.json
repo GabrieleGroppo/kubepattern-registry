@@ -1,0 +1,68 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "krateo-table-not-referenced",
+        "displayName": "Table Not Referenced",
+        "patternType": "CUSTOM",
+        "severity": "WARNING",
+        "category": "architecture",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/krateo_page_doc.md",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/krateo_page-not-referenced.json",
+        "description": "Identifies Pages in Krateo that are not referenced by any NavMenuItem. Unreferenced Pages may indicate unused or orphaned resources that could be cleaned up to optimize resource management and maintain a tidy environment."
+    },
+    "spec": {
+        "message": "Page {{krateo-page.name}} in namespace {{krateo-page.namespace}} is not referenced by any widget (NavMenuItem).",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Page",
+                "id": "krateo-page",
+                "leader": true,
+                "filters": {
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "krateo-system",
+                                "kube-system",
+                                "gmp-system",
+                                "cnrm-system",
+                                "kargo",
+                                "cert-manager",
+                                "krateo-podspanelobject-ns",
+                                "gke-managed-cim"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "resource": "NavMenuItem",
+                "id": "krateo-navmenuitem-containing-page"
+            }
+        ],
+        "actors": [
+            "krateo-navmenuitem"
+        ],
+        "relationships": [
+            {
+                "id": "navmenuitem-to-page-relationship",
+                "type": "REFERENCES_KRATEO",
+                "description": "Links Page '{{krateo-page.name}}' with NavMenuItem containing the Page '{{krateo-navmenuitem-containing-page.name}}'.",
+                "weight": 1,
+                "required": true,
+                "shared": false,
+                "resourceIds": [
+                    "krateo-navmenuitem-containing-page",
+                    "krateo-page"
+                ]
+            }
+        ],
+        "minRelationshipPoints": 1
+    }
+}
+
+
+
