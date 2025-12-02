@@ -7,8 +7,8 @@
         "patternType": "CUSTOM",
         "severity": "WARNING",
         "category": "architecture",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/krateo_page_doc.md",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/krateo_page-not-referenced.json",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/krateo-widget-not-referenced.md",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/definitions/krateo-page-not-referenced.json",
         "description": "Identifies Pages in Krateo that are not referenced by any NavMenuItem. Unreferenced Pages may indicate unused or orphaned resources that could be cleaned up to optimize resource management and maintain a tidy environment."
     },
     "spec": {
