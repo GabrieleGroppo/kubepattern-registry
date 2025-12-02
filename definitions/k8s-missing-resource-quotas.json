@@ -6,9 +6,9 @@
         "displayName": "Resource Quotas Predictable Demands",
         "patternType": "FOUNDATIONAL",
         "severity": "WARNING",
-        "category": "architecture",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/resource-quotas-predictable-demands.json",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
+        "category": "resources-limits",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/k8s-missing-resource-quotas.json",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/k8s-missing-resource-quotas.md",
         "description": "Identifies Namespaces that lack of explicit resource quotas. Setting resource quotas for such namespaces is crucial to prevent resource contention, ensure fair resource allocation, and maintain cluster stability. This pattern helps in identifying namespaces that could benefit from defined resource quotas to enhance overall cluster performance and reliability."
     
     },
@@ -73,3 +73,4 @@
         ]
     }
 }
+
