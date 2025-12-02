@@ -7,8 +7,8 @@
         "patternType": "FOUNDATIONAL",
         "severity": "WARNING",
         "category": "architecture",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/limit-range-predictable-demands.md",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/limit-range-predictable-demands.json",
+        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/k8s-missing-limit-range.md",
+        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/k8s-missing-limit-range.json",
         "description": "Identifies Namespaces that lack of explicit resource limits. Setting resource limits for such namespaces is crucial to prevent resource contention, ensure fair resource allocation, and maintain cluster stability. This pattern helps in identifying namespaces that could benefit from defined resource limits to enhance overall cluster performance and reliability."
     },
     "spec": {
@@ -76,3 +76,4 @@
         ]
     }
 }
+
