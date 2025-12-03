@@ -121,7 +121,7 @@
                             ]
                         },
                         {
-                            "key": ".metadata.labels.component",
+                            "key": ".metadata.labels.tier",
                             "operator": "EQUALS",
                             "values": [
                                 "log-collector",
@@ -144,7 +144,7 @@
                 "id": "shared-volume-mount",
                 "type": "MOUNTS",
                 "description": "Both pods mount volumes with the same name or emptyDir type, indicating they are intended to share storage. In a proper sidecar pattern, these containers should share the same pod-level volume.",
-                "weight": 0.6,
+                "weight": 1,
                 "required": true,
                 "shared": true,
                 "resourceIds": [

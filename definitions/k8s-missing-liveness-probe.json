@@ -28,7 +28,12 @@
                                 "kube-system",
                                 "kube-public",
                                 "kube-node-lease",
-                                "krateo-system"
+                                "krateo-system",
+                                "default",
+                                "trivy-system",
+                                "cnrm-system",
+                                "cert-manager"
+
                             ]
                         }
                     ],

@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-sidecar-pattern
+---
+# 1. Risorsa condivisa per creare la relazione (Relationship)
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: shared-logs-pvc
+  namespace: test-sidecar-pattern
+spec:
+  accessModes:
+    - ReadWriteMany # Necessario per essere montato da due pod simultaneamente
+  resources:
+    requests:
+      storage: 1Gi
+---
+# 2. Il Pod dell'applicazione principale (Main App)
+# Soddisfa i filtri: name/label "backend", ha volumi.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend-application
+  namespace: test-sidecar-pattern
+  labels:
+    app: backend        # Match su .metadata.labels.app
+    tier: api           # Match su .metadata.labels.tier
+spec:
+  containers:
+  - name: app-container
+    image: busybox
+    command: ["/bin/sh", "-c", "while true; do echo $(date) >> /var/log/app/app.log; sleep 5; done"]
+    volumeMounts:
+    - name: logs-vol
+      mountPath: /var/log/app
+  volumes:
+  - name: logs-vol
+    persistentVolumeClaim:
+      claimName: shared-logs-pvc
+---
+# 3. Il Pod "Sidecar" separato (Erroneamente)
+# Soddisfa i filtri: name/label "log-collector", ha volumi.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: log-collector
+  namespace: test-sidecar-pattern
+  labels:
+    app: logging        # Match su .metadata.labels.app
+    tier: log-collector # Match su .metadata.labels.tier
+spec:
+  containers:
+  - name: fluentd-simulator
+    image: busybox
+    command: ["/bin/sh", "-c", "tail -f /var/log/app/app.log"]
+    volumeMounts:
+    - name: logs-vol
+      mountPath: /var/log/app
+  volumes:
+  - name: logs-vol
+    persistentVolumeClaim:
+      claimName: shared-logs-pvc
