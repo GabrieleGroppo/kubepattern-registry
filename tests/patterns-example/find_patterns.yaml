@@ -1,0 +1,160 @@
+# PATTERNS TO PRESENT
+---
+# HEALTH PROBE PATTERN
+apiVersion: kubepattern.it/v1
+kind: K8sPattern
+metadata:
+  creationTimestamp: "2025-12-03T09:23:32Z"
+  generation: 1
+  name: health-probe-missing-a689742f
+  namespace: pattern-analysis-ns
+  resourceVersion: "1764753812856719015"
+  uid: 6f557419-2e37-49ee-9f45-895c2c98fabf
+spec:
+  apiVersion: kubepattern.it/v1
+  confidence: HIGH
+  description: Identifies pods that lack proper health probes (liveness and readiness
+    probes). Health probes are essential for Kubernetes to determine if containers
+    are running correctly and ready to accept traffic. Without these probes, Kubernetes
+    cannot automatically restart unhealthy containers or route traffic away from
+    containers that are not ready, leading to potential service disruptions and
+    degraded user experience.
+  message: Pod 'javaspringboots-v0-0-27-controller-84599b5f5f-97zh6' in namespace
+    'cliente1' does not have both liveness and readiness probes configured.
+  name: health-probe-missing
+  referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/k8s-health-probes.md
+  resources:
+  - name: javaspringboots-v0-0-27-controller-84599b5f5f-97zh6
+    namespace: cliente1
+    role: single-pod
+    uid: c021cbe0-a59e-4d45-8c01-f016ebe8a31d
+  scores: []
+  severity: INFO
+  type: FOUNDATIONAL
+
+--- 
+# SIDECAR PATTERN
+apiVersion: kubepattern.it/v1
+kind: K8sPattern
+metadata:
+  creationTimestamp: "2025-12-03T09:21:19Z"
+  generation: 1
+  name: sidecar-dfc35716
+  namespace: pattern-analysis-ns
+  resourceVersion: "1764753679324351004"
+  uid: 01fa4498-1c46-4cde-b147-01e2960ed8d9
+spec:
+  apiVersion: kubepattern.it/v1
+  confidence: HIGH
+  description: Identifies pods that should implement the sidecar pattern but are
+    incorrectly separated into different pods. The sidecar pattern places helper
+    containers alongside the main application container in the same pod to share
+    lifecycle, network, and storage resources. Common use cases include logging,
+    monitoring, configuration management, and service mesh proxies.
+  message: Pod 'backend-application' in namespace 'test-sidecar-pattern' appears
+    to be separated from its sidecar pod 'log-collector' in namespace 'test-sidecar-pattern'.
+  name: sidecar
+  referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/k8s-sidecar.md
+  resources:
+  - name: backend-application
+    namespace: test-sidecar-pattern
+    role: main-app
+    uid: 324ee2ce-6b7a-4c9f-90a8-4fcb6d502303
+  - name: log-collector
+    namespace: test-sidecar-pattern
+    role: sidecar
+    uid: cfbcbd41-df38-40f6-bcda-a0413b006b03
+  scores:
+  - category: CommonRelationships
+    score: 0
+  severity: INFO
+  type: STRUCTURAL
+---
+# RESOURCE QUOTAS PATTERN
+apiVersion: kubepattern.it/v1
+kind: K8sPattern
+metadata:
+  creationTimestamp: "2025-12-02T09:23:15Z"
+  generation: 1
+  name: resource-quotas-predictable-demands-442f964d
+  namespace: pattern-analysis-ns
+  resourceVersion: "1764667395244415021"
+  uid: 39b863ba-475d-43a0-8474-07b1e047f750
+spec:
+  apiVersion: kubepattern.it/v1
+  confidence: HIGH
+  description: Identifies Namespaces that lack of explicit resource quotas. Setting
+    resource quotas for such namespaces is crucial to prevent resource contention,
+    ensure fair resource allocation, and maintain cluster stability. This pattern
+    helps in identifying namespaces that could benefit from defined resource quotas
+    to enhance overall cluster performance and reliability.
+  message: Namespace demo-system does not have common resource quotas defined.
+  name: resource-quotas-predictable-demands
+  referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/k8s-missing-resource-quotas.md
+  resources:
+  - name: demo-system
+    role: single-namespace
+    uid: 226490b0-7cba-4cba-829d-2f79219e5df0
+  scores: []
+  severity: INFO
+  type: FOUNDATIONAL
+---
+# KRATEO PAGE NOT REFERENCED PATTERN
+apiVersion: kubepattern.it/v1
+kind: K8sPattern
+metadata:
+  creationTimestamp: "2025-12-02T09:18:56Z"
+  generation: 1
+  name: krateo-page-not-referenced-1902f7f2
+  namespace: pattern-analysis-ns
+  resourceVersion: "1764667136712383011"
+  uid: e1c06d6c-3730-41ab-82b2-32a8349c8a3e
+spec:
+  apiVersion: kubepattern.it/v1
+  confidence: HIGH
+  description: Identifies Pages in Krateo that are not referenced by any NavMenuItem.
+    Unreferenced Pages may indicate unused or orphaned resources that could be cleaned
+    up to optimize resource management and maintain a tidy environment.
+  message: Page overview-page in namespace overview-ns is not referenced by any
+    widget (NavMenuItem).
+  name: krateo-page-not-referenced
+  referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/krateo-widget-not-referenced.md
+  resources:
+  - name: overview-page
+    namespace: overview-ns
+    role: krateo-page
+    uid: e07356b8-7f33-4ed5-9e1f-08ed3bdbddf0
+  scores: []
+  severity: INFO
+  type: CUSTOM
+
+---
+# KRATEO TABLE NOT REFERENCED
+apiVersion: kubepattern.it/v1
+kind: K8sPattern
+metadata:
+  creationTimestamp: "2025-12-02T09:18:44Z"
+  generation: 1
+  name: krateo-table-not-referenced-d91671b9
+  namespace: pattern-analysis-ns
+  resourceVersion: "1764667124394159006"
+  uid: f8177ae8-9114-4662-8ecc-44d6ff3a1574
+spec:
+  apiVersion: kubepattern.it/v1
+  confidence: HIGH
+  description: Identifies Tables in Krateo that are not referenced by any Panel,
+    Row, Column, or Page. Unreferenced Tables may indicate unused or orphaned resources
+    that could be cleaned up to optimize resource management and maintain a tidy
+    environment.
+  message: Table table-without-references in namespace default is not referenced
+    by any widget (Panel, Row, Column, Page).
+  name: krateo-table-not-referenced
+  referenceLink: https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/krateo-widget-not-referenced.md
+  resources:
+  - name: table-without-references
+    namespace: default
+    role: krateo-table
+    uid: db2bc6fc-6cdd-42c4-9a11-0564c441f0f8
+  scores: []
+  severity: INFO
+  type: CUSTOM
