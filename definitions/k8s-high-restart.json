@@ -7,8 +7,8 @@
         "patternType": "BEHAVIORAL",
         "severity": "WARNING",
         "category": "Performance",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/high-restart-count-resource-suggestion.json",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/place-holder.md",
+        "gitUrl": "https://github.com/kubepattern/registry/tree/main/doc/high-restart-count-resource-suggestion.json",
+        "docUrl": "https://github.com/kubepattern/registry/tree/test/doc/place-holder.md",
         "description": "Identifies pods with high restart counts that may indicate resource constraints (OOM, CPU throttling). Pods that restart frequently often need increased memory or CPU limits to maintain stability."
     },
     "spec": {

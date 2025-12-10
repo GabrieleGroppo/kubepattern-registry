@@ -7,8 +7,8 @@
         "patternType": "STRUCTURAL",
         "severity": "INFO",
         "category": "architecture",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/k8s-sidecar.json",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/test/doc/k8s-sidecar.md",
+        "gitUrl": "https://github.com/kubepattern/registry/tree/main/doc/k8s-sidecar.json",
+        "docUrl": "https://github.com/kubepattern/registry/tree/main/doc/k8s-sidecar.md",
         "description": "Identifies pods that should implement the sidecar pattern but are incorrectly separated into different pods. The sidecar pattern places helper containers alongside the main application container in the same pod to share lifecycle, network, and storage resources. Common use cases include logging, monitoring, configuration management, and service mesh proxies."
     },
     "spec": {

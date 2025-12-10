@@ -8,8 +8,8 @@
         "severity": "CRITICAL",
         "category": "Performance",
         "description": "Identifies pods in CrashLoopBackOff state, which often indicates resource constraints, startup failures due to insufficient resources, or application errors caused by resource pressure.",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/definitions/vanilla_crash-loop.json",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/crashloop_doc.md"
+        "gitUrl": "https://github.com/kubepattern/registry/tree/main/definitions/vanilla_crash-loop.json",
+        "docUrl": "https://github.com/kubepattern/registry/tree/main/doc/crashloop_doc.md"
     },
     "spec": {
         "message": "Pod {{crashloop-pod.name}} in namespace {{crashloop-pod.namespace}} is in CrashLoopBackOff state.",

@@ -7,8 +7,8 @@
         "patternType": "CUSTOM",
         "severity": "WARNING",
         "category": "krateo-ui",
-        "docUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/krateo-widget-not-referenced.md",
-        "gitUrl": "https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/krateo_table-not-referenced.json",
+        "docUrl": "https://github.com/kubepattern/registry/tree/main/doc/krateo-widget-not-referenced.md",
+        "gitUrl": "https://github.com/kubepattern/registry/tree/main/doc/krateo_table-not-referenced.json",
         "description": "Identifies Tables in Krateo that are not referenced by any Panel, Row, Column, or Page. Unreferenced Tables may indicate unused or orphaned resources that could be cleaned up to optimize resource management and maintain a tidy environment."
     },
     "spec": {
