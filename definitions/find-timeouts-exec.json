@@ -1,0 +1,59 @@
+{
+    "version": "kubepattern.it/v1",
+    "kind": "Pattern",
+    "metadata": {
+        "name": "find-timeouts-exec",
+        "displayName": "Timeout Exec",
+        "patternType": "CUSTOM",
+        "severity": "INFO",
+        "category": "update",
+        "gitUrl": "https://github.com/kubepattern/registry/tree/main/doc/k8s-missing-tier.json",
+        "docUrl": "https://github.com/kubepattern/registry/tree/test/doc/k8s-missing-tier.md",
+        "description": "Find Timeout Exec field in cluster"
+    },
+    "spec": {
+        "message": "Pod '{{app.name}}' in namespace '{{app.namespace}}' has exec probe.",
+        "topology": "SINGLE",
+        "resources": [
+            {
+                "resource": "Pod",
+                "id": "app",
+                "leader": true,
+                "filters": {
+                    "matchAny": [
+                        {
+                            "key": ".spec.livenessProbe.exec",
+                            "operator": "EXISTS",
+                            "values": []
+                        },
+                        {
+                            "key": ".spec.redinessProbe.exec",
+                            "operator": "EXISTS",
+                            "values": []
+                        },
+                        {
+                            "key": ".spec.startupProbe.exec",
+                            "operator": "EXISTS",
+                            "values": []
+                        }
+                    ],
+                    "matchNone": [
+                        {
+                            "key": ".metadata.namespace",
+                            "operator": "EQUALS",
+                            "values": [
+                                "kube-system",
+                                "kube-public",
+                                "kube-node-lease",
+                                "krateo-system"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "actors": [
+            "app"
+        ]
+    }
+}
