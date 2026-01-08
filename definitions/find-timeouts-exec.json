@@ -8,8 +8,8 @@
         "severity": "INFO",
         "category": "update",
         "gitUrl": "https://github.com/kubepattern/registry/tree/main/doc/k8s-missing-tier.json",
-        "docUrl": "https://github.com/kubepattern/registry/tree/test/doc/k8s-missing-tier.md",
-        "description": "Find Timeout Exec field in cluster"
+        "docUrl": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/exec-probe-timeouts",
+        "description": "Find Timeout Exec field in cluster critical for Kubernetes GKE update"
     },
     "spec": {
         "message": "Pod '{{app.name}}' in namespace '{{app.namespace}}' has exec probe.",
