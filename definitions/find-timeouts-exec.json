@@ -22,17 +22,17 @@
                 "filters": {
                     "matchAny": [
                         {
-                            "key": ".spec.livenessProbe.exec",
+                            "key": ".spec.containers[*].livenessProbe.exec",
                             "operator": "EXISTS",
                             "values": []
                         },
                         {
-                            "key": ".spec.redinessProbe.exec",
+                            "key": ".spec.containers[*].redinessProbe.exec",
                             "operator": "EXISTS",
                             "values": []
                         },
                         {
-                            "key": ".spec.startupProbe.exec",
+                            "key": ".spec.containers[*].startupProbe.exec",
                             "operator": "EXISTS",
                             "values": []
                         }
